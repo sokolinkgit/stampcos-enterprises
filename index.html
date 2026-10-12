@@ -562,7 +562,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       <div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" placeholder="Search stamps — e.g. 'date' , 'seal' , 'wooden'"></div>
       <div class="sort"><select id="sortSelect"><option value="popular">Sort: Most Popular</option><option value="price-low">Price: Low → High</option><option value="price-high">Price: High → Low</option><option value="name">Name A→Z</option></select></div>
       <button class="btn btn-ghost" id="clearFilters" style="height:44px"><i class="fa-solid fa-rotate"></i> Clear</button>
-      <span style="margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--muted);font-size:.86rem"><i class="fa-solid fa-bag-shopping" style="color:var(--blue-600)"></i> <span id="productCount">14 products</span></span>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--muted);font-size:.86rem"><i class="fa-solid fa-bag-shopping" style="color:var(--blue-600)"></i> <span id="productCount">26 products</span></span>
     </div>
 
     <div class="filters reveal reveal-delay-1" id="filters">
@@ -742,7 +742,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
         <div class="form-grid">
           <div class="input"><input required name="name" placeholder="Your Name *"></div>
           <div class="input"><input required name="phone" placeholder="Phone / WhatsApp *"></div>
-          <div class="input"><select name="product"><option value="">What do you need?</option><option>Company Seal — Heavy Duty</option><option>Pocket Seal Silver</option><option>Wooden Stamp — Any Shape</option><option>Round Auto Date Stamp</option><option>Oval Data Stamp</option><option>Self-Inking Date Stamp</option><option>Box Auto Stamp</option><option>Garment Ink</option><option>Name Tags</option><option>Door Tags</option><option>Other</option></select></div>
+          <div class="input"><select name="product"><option value="">What do you need?</option><option>Company Seal — Heavy Duty</option><option>Pocket Seal Silver</option><option>Wooden Stamp — Any Shape</option><option>Round Auto Date Stamp</option><option>Oval Data Stamp</option><option>Self-Inking Date Stamp</option><option>Box Auto Stamp</option><option>Pre-Inked Signature Stamp</option><option>Received / Paid / Copy Office Stamp</option><option>Numbering Stamp — 6 Digit</option><option>Inspection Date Stamp</option><option>Alphabet & Number Stamp Set</option><option>Stamp Ink / Replacement Pad</option><option>Garment Ink</option><option>Name Tags</option><option>Door Tags / Desk Name Plate</option><option>Other</option></select></div>
           <div class="input"><input name="company" placeholder="Company / Institution Name"></div>
         </div>
         <div class="input" style="margin-top:12px"><textarea name="message" placeholder="Details — e.g. 'Round 42mm, text: JAMII SACCO LTD, PO BOX... Date included, deliver to Kisumu'"></textarea></div>
@@ -886,6 +886,9 @@ const slidesData = [
   {img:"assets/company-seals.png", title:"Heavy-Duty Company Seals", sub:"Embossed, crisp impressions for official documents", tag:"Best Seller"},
   {img:"assets/rubber-stamps.png", title:"Custom Wooden Rubber Stamps", sub:"Round, oval or rectangular — made to your artwork", tag:"Custom Shapes"},
   {img:"assets/date-stamps.png", title:"Date, Self-Inking & Box Stamps", sub:"Reliable office marking for 10,000+ impressions", tag:"Office Favourite"},
+  {img:"assets/office-stamps.png", title:"Received, Paid & Signature Stamps", sub:"Ready-made office stamps for fast document flow", tag:"Office Essentials"},
+  {img:"assets/numbering-stamps.png", title:"Numbering, Inspection & Alphabet Sets", sub:"Practical tools for records, stock and quality checks", tag:"New Range"},
+  {img:"assets/ink-accessories.png", title:"Ink Pads & Refill Supplies", sub:"Keep every stamp sharp, colourful and ready to work", tag:"Supplies"},
   {img:"assets/custom-tags.png", title:"Name Tags, Door Tags & Garment Ink", sub:"Professional marking solutions for every team", tag:"Ready for Kenya"},
 ];
 let slideIdx=0;
@@ -922,6 +925,18 @@ const products = [
   {id:12, cat:"self-inking", catLabel:"Self-Inking", name:"Trodat Self-Inking Stamp 4913", desc:"Trodat-style self-inking rectangular. Up to 6 lines. Smooth, quiet, refillable.", price:1500, old:1800, img:"assets/date-stamps.png", badge:"", stock:73, rating:4.7, reviews:189},
   {id:13, cat:"wooden", catLabel:"Wooden Stamp", name:"Wooden Handle Stamp — Round 38mm", desc:"Classic round wooden stamp for received/paid/approved. Fast 1hr make.", price:700, old:900, img:"assets/rubber-stamps.png", badge:"", stock:81, rating:4.8, reviews:223},
   {id:14, cat:"office", catLabel:"Office & Box", name:"Common Seal — Company Stamp Set", desc:"Complete set: Rubber stamp + Seal + Ink pad. For new company registration.", price:5800, old:6800, img:"assets/company-seals.png", badge:"pop", stock:41, rating:5.0, reviews:267},
+  {id:15, cat:"self-inking", catLabel:"Self-Inking", name:"Pre-Inked Signature Stamp", desc:"Compact pre-inked signature stamp for approvals, delivery notes and recurring paperwork.", price:1200, old:1450, img:"assets/office-stamps.png", badge:"new", stock:68, rating:4.8, reviews:146},
+  {id:16, cat:"self-inking", catLabel:"Self-Inking", name:"Received / Paid / Copy Office Stamp", desc:"Ready-made office stamp with bold, clean lettering. Choose Received, Paid, Copy or Approved.", price:1100, old:1350, img:"assets/office-stamps.png", badge:"pop", stock:86, rating:4.9, reviews:294},
+  {id:17, cat:"office", catLabel:"Office & Box", name:"Numbering Stamp — 6 Digit", desc:"Durable six-digit metal numbering stamp for invoices, receipts, vouchers and stock records.", price:2300, old:2700, img:"assets/numbering-stamps.png", badge:"new", stock:39, rating:4.8, reviews:118},
+  {id:18, cat:"date", catLabel:"Date Stamp", name:"Inspection Date Stamp", desc:"Adjustable inspection dater with day, month, year and custom quality-control text.", price:2200, old:2600, img:"assets/numbering-stamps.png", badge:"", stock:52, rating:4.8, reviews:131},
+  {id:19, cat:"office", catLabel:"Office & Box", name:"Alphabet & Number Stamp Set", desc:"Full wooden alphabet and number set for packaging, classroom labels and custom marking.", price:2800, old:3300, img:"assets/numbering-stamps.png", badge:"", stock:28, rating:4.7, reviews:89},
+  {id:20, cat:"wooden", catLabel:"Wooden Stamp", name:"Logo Stamp + Ink Pad Starter Set", desc:"Your custom logo stamp paired with a quality ink pad — ideal for packaging and small businesses.", price:1450, old:1750, img:"assets/rubber-stamps.png", badge:"new", stock:74, rating:4.9, reviews:207},
+  {id:21, cat:"ink", catLabel:"Stamp Ink", name:"Replacement Ink Pad — Any Colour", desc:"Fresh red, blue, black or green ink pad for wooden and office stamps. Clean, even coverage.", price:450, old:550, img:"assets/ink-accessories.png", badge:"", stock:98, rating:4.8, reviews:173},
+  {id:22, cat:"ink", catLabel:"Stamp Ink", name:"Stamp Ink Refill — 10ml", desc:"Fast-drying refill ink for self-inking, date and traditional stamp pads. Multiple colours available.", price:300, old:400, img:"assets/ink-accessories.png", badge:"pop", stock:120, rating:4.9, reviews:246},
+  {id:23, cat:"ink", catLabel:"Garment Ink", name:"Fabric Marking Ink — 50ml", desc:"Permanent textile ink for uniforms, linen and workwear. Wash-proof after heat setting.", price:850, old:1050, img:"assets/ink-accessories.png", badge:"new", stock:61, rating:4.8, reviews:159},
+  {id:24, cat:"tags", catLabel:"Name Tags", name:"Magnetic Name Tags — Premium", desc:"Scratch-resistant staff name badges with strong magnetic backs. Custom names, roles and colours.", price:500, old:650, img:"assets/custom-tags.png", badge:"pop", stock:84, rating:4.9, reviews:238},
+  {id:25, cat:"tags", catLabel:"Door Tags", name:"Desk Name Plate — Brushed Acrylic", desc:"Elegant desk or reception name plate in gold, silver or clear acrylic with engraved text.", price:1200, old:1450, img:"assets/custom-tags.png", badge:"", stock:47, rating:4.8, reviews:112},
+  {id:26, cat:"seal", catLabel:"Company Seal", name:"Company Seal Replacement Die", desc:"Replacement engraved die for existing seal presses. Send your approved artwork for an exact fit.", price:1800, old:2200, img:"assets/company-seals.png", badge:"", stock:35, rating:4.7, reviews:76},
 ];
 
 let activeFilter="all";

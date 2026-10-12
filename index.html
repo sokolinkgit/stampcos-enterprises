@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StampCos Enterprises — Rubber Stamps, Company Seals & More | Nairobi, Kenya</title>
-<meta name="description" content="StampCos Enterprises — Nairobi's #1 for Rubber Stamps, Company Seals, Date Stamps, Name Tags & Door Tags. Opposite Bihi Towers, Moi Avenue, Queen Mall G17. Delivery Countrywide. +254 714 178239">
+<meta name="description" content="StampCos Enterprises — Nairobi's #1 for Rubber Stamps, Company Seals, Date Stamps, Name Tags & Door Tags. Opposite Bihi Towers, Moi Avenue, Queen Mall G17. Delivery Countrywide. +254 714 178239. Open Mon-Sat 09:00–20:00, Sun Closed.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,10 +27,8 @@
   --dark:#0B1220;
   --muted:#64748B;
   --line:#E2E8F0;
-  --radius:18px;
-  --radius-lg:28px;
   --shadow:0 10px 40px rgba(2,44,94,.12);
-  --shadow-lg:0 20px 60px rgba(2,44,94,.18);
+  --shadow-lg:0 24px 64px rgba(2,44,94,.18);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -40,19 +38,24 @@ img{max-width:100%;display:block}
 button{font-family:inherit}
 .container{width:min(1280px,92%);margin-inline:auto}
 
+/* Grain */
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E")}
+
 /* Topbar */
-.topbar{background:linear-gradient(90deg,var(--blue-900), var(--blue-700)); color:#E0F0FF; font-size:.84rem; position:relative; z-index:60}
-.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;flex-wrap:wrap}
-.topbar-left{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:5px 11px;border-radius:999px;backdrop-filter:blur(6px);font-weight:500}
+.topbar{background:linear-gradient(90deg,var(--blue-900), var(--blue-700)); color:#E0F0FF; font-size:.84rem; position:relative; z-index:60; overflow:hidden}
+.topbar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);transform:translateX(-100%);animation:shimmerBar 4.5s infinite}
+@keyframes shimmerBar{0%{transform:translateX(-100%)}60%{transform:translateX(100%)}100%{transform:translateX(100%)}}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;flex-wrap:wrap;position:relative;z-index:1}
+.topbar-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:5px 11px;border-radius:999px;backdrop-filter:blur(6px);font-weight:600}
 .pill i{color:var(--cyan)}
-.pill.accent{background:var(--accent);color:#1A1A1A;border-color:transparent;font-weight:700;letter-spacing:.02em}
+.pill.accent{background:var(--accent);color:#1A1A1A;border-color:transparent;font-weight:800;letter-spacing:.02em;box-shadow:0 4px 14px rgba(255,184,0,.35)}
 .topbar a{color:#fff}
-.topbar-right{display:flex;align-items:center;gap:12px}
-.topbar-right a{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.topbar-right a{display:inline-flex;align-items:center;gap:8px;font-weight:700}
 
 /* Header */
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.84);backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid rgba(226,232,240,.9)}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(16px) saturate(1.5);border-bottom:1px solid rgba(226,232,240,.9)}
 .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--blue-800), var(--blue-500));display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.25rem;letter-spacing:-.02em;box-shadow:0 8px 20px rgba(21,101,192,.35);position:relative;overflow:hidden}
@@ -62,11 +65,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.84);backdro
 .brand-text b span{color:var(--blue-600)}
 .brand-text small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-600);font-weight:700;margin-top:2px;opacity:.9}
 .nav-links{display:flex;align-items:center;gap:6px}
-.nav-links a{padding:9px 14px;border-radius:999px;font-weight:600;font-size:.92rem;color:#334155;transition:.2s}
+.nav-links a{padding:9px 14px;border-radius:999px;font-weight:600;font-size:.92rem;color:#334155;transition:.22s}
 .nav-links a:hover{background:var(--blue-50);color:var(--blue-700)}
 .nav-links a.active{background:var(--blue-900);color:#fff;box-shadow:0 6px 18px rgba(7,26,47,.25)}
 .nav-actions{display:flex;align-items:center;gap:10px}
-.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;font-weight:700;transition:.22s;white-space:nowrap}
+.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;font-weight:800;transition:.22s;white-space:nowrap;position:relative;overflow:hidden}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg, transparent 20%, rgba(255,255,255,.2) 45%, transparent 70%);transform:translateX(-100%);transition:transform .6s}
+.btn:hover::before{transform:translateX(100%)}
 .btn-primary{background:linear-gradient(135deg,var(--blue-700), var(--blue-500)); color:#fff; box-shadow:0 10px 24px rgba(21,101,192,.32)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(21,101,192,.4)}
 .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--blue-900)}
@@ -75,84 +80,101 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.84);backdro
 .btn-whatsapp:hover{background:#20BD5A;transform:translateY(-2px)}
 .btn-dark{background:var(--blue-900);color:#fff}
 .cart-btn{position:relative;width:44px;height:44px;border-radius:999px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;transition:.2s}
-.cart-btn:hover{border-color:var(--blue-300);background:var(--blue-50)}
+.cart-btn:hover{border-color:var(--blue-300);background:var(--blue-50);transform:translateY(-1px)}
 .cart-badge{position:absolute;top:-6px;right:-6px;background:var(--accent);color:#1A1A1A;font-weight:800;font-size:.72rem;min-width:20px;height:20px;display:grid;place-items:center;border-radius:999px;border:2px solid #fff}
-.hamburger{display:none;width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:#fff;display:none;place-items:center;cursor:pointer}
+.hamburger{width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:#fff;display:none;place-items:center;cursor:pointer}
 
 /* Progress */
-.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--cyan), var(--blue-500), var(--accent));width:0;z-index:100;transition:width .1s}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--cyan), var(--blue-500), var(--accent));width:0;z-index:100}
 
-/* Hero */
+/* Hero — MASTERPIECE */
 .hero{position:relative;overflow:hidden;background:
- radial-gradient(900px 500px at 15% 10%, rgba(0,229,255,.18), transparent 60%),
- radial-gradient(800px 600px at 85% 15%, rgba(30,136,229,.18), transparent 60%),
- radial-gradient(700px 500px at 50% 100%, rgba(255,184,0,.12), transparent 60%),
- linear-gradient(180deg,#F0F7FF 0%, #FFFFFF 65%);
- padding:26px 0 28px;
-}
+ radial-gradient(900px 520px at 12% 8%, rgba(0,229,255,.16), transparent 60%),
+ radial-gradient(800px 600px at 88% 12%, rgba(21,101,192,.16), transparent 60%),
+ radial-gradient(700px 500px at 50% 105%, rgba(255,184,0,.10), transparent 60%),
+ linear-gradient(180deg,#F0F7FF 0%, #FFFFFF 62%);
+ padding:18px 0 24px; isolation:isolate}
+.mesh{position:absolute;inset:0;z-index:-1;opacity:.55}
+.mesh::before,.mesh::after{content:"";position:absolute;border-radius:50%;filter:blur(40px);animation:floatMesh 12s ease-in-out infinite}
+.mesh::before{width:560px;height:560px;left:-80px;top:-120px;background:radial-gradient(circle at 30% 30%, rgba(0,229,255,.22), transparent 70%)}
+.mesh::after{width:720px;height:720px;right:-160px;top:-60px;background:radial-gradient(circle at 30% 30%, rgba(30,136,229,.18), transparent 70%);animation-delay:-6s}
+@keyframes floatMesh{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-14px) scale(1.02)}}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;padding:18px 0}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid #DBEAFE;padding:7px 12px;border-radius:999px;box-shadow:var(--shadow);font-weight:700;font-size:.82rem;letter-spacing:.04em;color:var(--blue-800);text-transform:uppercase}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid #DBEAFE;padding:7px 12px;border-radius:999px;box-shadow:var(--shadow);font-weight:800;font-size:.82rem;letter-spacing:.04em;color:var(--blue-800);text-transform:uppercase}
 .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 0 6px rgba(0,200,83,.15);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 6px rgba(0,200,83,.15)}50%{box-shadow:0 0 0 10px rgba(0,200,83,0)}}
-.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.1rem, 4.2vw, 3.6rem);line-height:.95;letter-spacing:-.04em;margin:14px 0 14px;font-weight:800;color:var(--blue-900)}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.15rem, 4.4vw, 3.7rem);line-height:.92;letter-spacing:-.045em;margin:14px 0 14px;font-weight:800;color:var(--blue-900)}
 .hero h1 .grad{background:linear-gradient(90deg,var(--blue-600) 0%, #00B4D8 55%, var(--cyan) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lead{font-size:clamp(1rem, 1.35vw, 1.18rem);color:#334155;max-width:58ch}
 .hero p.lead b{color:var(--blue-800)}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 16px}
 .trust{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
 .trust .avatars{display:flex}
-.trust .avatars img{width:34px;height:34px;border-radius:999px;border:3px solid #fff;margin-left:-8px;object-fit:cover}
+.trust .avatars img{width:34px;height:34px;border-radius:999px;border:3px solid #fff;margin-left:-8px;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .trust .avatars img:first-child{margin-left:0}
 .stars{color:#FFB800}
 .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
-.mini-stat{background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:12px 14px;box-shadow:0 6px 18px rgba(15,23,42,.06)}
+.mini-stat{background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:12px 14px;box-shadow:0 6px 18px rgba(15,23,42,.06);transition:.25s}
+.mini-stat:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .mini-stat b{font-size:1.35rem;line-height:1;color:var(--blue-900)}
-.mini-stat span{display:block;font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-top:2px}
+.mini-stat span{display:block;font-size:.78rem;color:var(--muted);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-top:2px}
+.open-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-weight:800;font-size:.74rem;letter-spacing:.04em;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);transition:.3s}
+.open-pill.open{background:rgba(37,211,102,.14);border-color:rgba(37,211,102,.35);color:#86EFAC}
+.open-pill.closed{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.32);color:#FECACA}
 
-/* Slideshow window */
-.window{position:relative;background:#0B1220;border-radius:26px;overflow:hidden;box-shadow:0 24px 60px rgba(7,26,47,.32), 0 1px 0 rgba(255,255,255,.15) inset;padding:14px;border:1px solid rgba(255,255,255,.08)}
-.window::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,.08), transparent 30%);pointer-events:none}
+/* Slideshow window — masterpiece */
+.window{position:relative;background:linear-gradient(180deg,#0B1220 0%, #0F1B32 100%);border-radius:26px;overflow:visible;box-shadow:0 24px 60px rgba(7,26,47,.32), 0 1px 0 rgba(255,255,255,.12) inset;padding:14px;border:1px solid rgba(255,255,255,.08)}
+.window::before{content:"";position:absolute;inset:0;border-radius:26px;background:linear-gradient(180deg, rgba(255,255,255,.08), transparent 28%);pointer-events:none}
 .window-bar{display:flex;align-items:center;justify-content:space-between;padding:6px 6px 12px}
 .dots{display:flex;gap:7px}
 .dots span{width:12px;height:12px;border-radius:999px;display:block}
-.dots span:nth-child(1){background:#FF5F57}
+.dots span:nth-child(1){background:#FF5F57;box-shadow:0 0 10px rgba(255,95,87,.5)}
 .dots span:nth-child(2){background:#FFBD2E}
 .dots span:nth-child(3){background:#28CA42}
-.window-title{color:#93C5FD;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;display:flex;align-items:center;gap:8px}
+.window-title{color:#93C5FD;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;display:flex;align-items:center;gap:8px}
 .window-title i{color:var(--cyan)}
 .live{display:inline-flex;align-items:center;gap:6px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.35);color:#86EFAC;padding:5px 9px;border-radius:999px;font-weight:800;font-size:.72rem;letter-spacing:.06em}
 .live i{font-size:.6rem;animation:blink 1s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
-.slides{position:relative;height:430px;border-radius:18px;overflow:hidden;background:#0F172A}
-.slide{position:absolute;inset:0;opacity:0;transform:scale(1.02);transition:opacity .7s ease, transform 1.2s ease}
+.slides{position:relative;height:432px;border-radius:18px;overflow:hidden;background:#0F172A;border:1px solid rgba(255,255,255,.06)}
+.slide{position:absolute;inset:0;opacity:0;transform:scale(1.03);transition:opacity .7s ease, transform 1.2s ease}
 .slide.active{opacity:1;transform:scale(1)}
-.slide img{width:100%;height:100%;object-fit:cover}
-.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 35%, rgba(2,12,28,.72) 100%)}
+.slide img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.02)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 34%, rgba(2,12,28,.74) 100%)}
 .slide-caption{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;color:#fff;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
-.caption-left h4{font-size:1.05rem;line-height:1.1}
-.caption-left p{font-size:.84rem;opacity:.9;margin-top:3px}
-.caption-tag{background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);padding:7px 10px;border-radius:999px;font-weight:700;font-size:.78rem;white-space:nowrap}
+.caption-left h4{font-size:1.06rem;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.caption-left p{font-size:.84rem;opacity:.92;margin-top:3px;font-weight:500}
+.caption-tag{background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);padding:7px 10px;border-radius:999px;font-weight:800;font-size:.78rem;white-space:nowrap}
 .slide-indicators{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);display:flex;gap:6px;z-index:3}
-.slide-indicators span{width:22px;height:4px;border-radius:999px;background:rgba(255,255,255,.35);transition:.3s}
+.slide-indicators span{width:22px;height:4px;border-radius:999px;background:rgba(255,255,255,.35);transition:.35s}
 .slide-indicators span.active{width:34px;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
 .window-foot{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:12px;padding:0 2px}
-.window-foot-left{color:#CBD5E1;font-size:.85rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.window-foot-left{color:#CBD5E1;font-size:.85rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .window-foot-left b{color:#fff}
-.window-foot-right{display:flex;gap:8px}
+.window-foot-right{display:flex;gap:8px;flex-wrap:wrap}
+.float-card{position:absolute;z-index:4;background:rgba(255,255,255,.96);border:1px solid rgba(226,232,240,.9);border-radius:16px;padding:10px 12px;box-shadow:0 16px 36px rgba(7,26,47,.18);display:flex;align-items:center;gap:10px;backdrop-filter:blur(8px);animation:floatCard 4s ease-in-out infinite}
+.float-card i{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#fff;flex:0 0 36px}
+.float-card b{line-height:1;font-size:.92rem;color:var(--blue-900)}
+.float-card span{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.float-card.c1{left:-14px;top:68px;animation-delay:.2s}
+.float-card.c2{right:-14px;bottom:86px;animation-delay:.9s}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+@media(max-width:1100px){.float-card{display:none}}
 
 /* Marquee */
-.marquee{background:var(--blue-900);color:#BDE0FF;padding:10px 0;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.marquee{background:var(--blue-900);color:#BDE0FF;padding:10px 0;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);position:relative}
 .marquee-track{display:inline-flex;align-items:center;gap:36px;animation:marq 28s linear infinite}
 .marquee-track span{display:inline-flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
 .marquee-track i{color:var(--cyan)}
 @keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* Section */
-section{padding:64px 0}
+section{padding:64px 0;position:relative}
 .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
 .eyebrow2{display:inline-flex;align-items:center;gap:8px;color:var(--blue-600);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem}
 .eyebrow2::before{content:"";width:28px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--blue-600),var(--cyan))}
-.section-head h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem, 3vw, 2.35rem);line-height:1;letter-spacing:-.03em;color:var(--blue-900);margin-top:8px}
+.section-head h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem, 3vw, 2.35rem);line-height:.98;letter-spacing:-.03em;color:var(--blue-900);margin-top:8px}
 .section-head p{color:var(--muted);max-width:46ch;font-size:.98rem}
 .divider{height:1px;background:linear-gradient(90deg, transparent, #DBEAFE, transparent);margin:10px 0 0}
 
@@ -160,7 +182,7 @@ section{padding:64px 0}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
 .chip{padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:700;font-size:.86rem;color:#334155;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:7px}
 .chip.active, .chip:hover{background:var(--blue-900);color:#fff;border-color:var(--blue-900);transform:translateY(-1px);box-shadow:0 8px 18px rgba(7,26,47,.18)}
-.chip i{opacity:.8}
+.chip i{opacity:.85}
 .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
 .search{flex:1;min-width:220px;position:relative}
 .search input{width:100%;height:44px;border-radius:999px;border:1px solid var(--line);padding:0 16px 0 42px;font-weight:500;outline:0;background:#fff;transition:.2s}
@@ -168,15 +190,15 @@ section{padding:64px 0}
 .search i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
 .sort select{height:44px;border-radius:999px;border:1px solid var(--line);padding:0 36px 0 14px;background:#fff;font-weight:600;color:#334155}
 
-/* Products Grid */
+/* Products Grid — masterpiece hover */
 .grid-products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media(max-width:1100px){.grid-products{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:768px){.grid-products{grid-template-columns:repeat(2,1fr);gap:12px}}
-.product{background:#fff;border:1px solid #E2E8F0;border-radius:22px;overflow:hidden;box-shadow:0 6px 18px rgba(15,23,42,.06);display:flex;flex-direction:column;transition:.28s;position:relative}
-.product:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:#BFDBFE}
+.product{background:#fff;border:1px solid #E2E8F0;border-radius:22px;overflow:hidden;box-shadow:0 6px 18px rgba(15,23,42,.06);display:flex;flex-direction:column;transition:.32s;position:relative}
+.product:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg);border-color:#BFDBFE}
 .product-media{position:relative;height:168px;overflow:hidden;background:linear-gradient(180deg,#F0F7FF,#FFFFFF)}
-.product-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.product:hover .product-media img{transform:scale(1.07)}
+.product-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s, filter .6s}
+.product:hover .product-media img{transform:scale(1.08);filter:saturate(1.08)}
 .badge-top{position:absolute;left:10px;top:10px;display:flex;gap:6px;z-index:2;flex-wrap:wrap}
 .badge{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(6px)}
 .badge.new{background:var(--accent);color:#1A1A1A}
@@ -188,20 +210,19 @@ section{padding:64px 0}
 .cat{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--blue-600)}
 .product-body h3{font-size:.98rem;line-height:1.25;letter-spacing:-.02em;color:var(--blue-900);min-height:2.5em}
 .product-body p.desc{font-size:.82rem;color:var(--muted);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}
-.price-row{display:flex;align-items:baseline;gap:8px;margin-top:2px}
+.price-row{display:flex;align-items:baseline;gap:8px;margin-top:2px;flex-wrap:wrap}
 .price{font-weight:900;font-size:1.15rem;color:var(--blue-900)}
 .price-old{font-size:.82rem;color:#94A3B8;text-decoration:line-through}
 .meta{display:flex;align-items:center;gap:8px;color:#64748B;font-size:.78rem;font-weight:600;flex-wrap:wrap}
 .meta i{color:var(--blue-500)}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:8px}
 .btn-sm{height:38px;border-radius:999px;font-size:.84rem;font-weight:800;padding:0 12px}
-.btn-sm i{font-size:.9rem}
 .btn-add{background:#fff;border:1.5px solid var(--blue-900);color:var(--blue-900)}
 .btn-add:hover{background:var(--blue-900);color:#fff}
 .btn-wa{background:#25D366;color:#fff;border:1px solid #25D366}
 .btn-wa:hover{background:#1fb65a}
 .stockbar{height:6px;background:#E2E8F0;border-radius:999px;overflow:hidden}
-.stockbar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue-500),var(--cyan))}
+.stockbar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue-500),var(--cyan));transition:width .6s}
 
 /* About */
 .about{position:relative;background:linear-gradient(180deg,#FFFFFF 0%, #F0F7FF 100%);overflow:hidden}
@@ -212,21 +233,22 @@ section{padding:64px 0}
 .tick{display:flex;gap:10px;align-items:flex-start;font-weight:600;color:#334155;font-size:.92rem}
 .tick i{width:28px;height:28px;display:grid;place-items:center;border-radius:999px;background:rgba(37,211,102,.14);color:var(--success);flex:0 0 28px;margin-top:1px}
 .stats-about{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.stat-a{background:var(--blue-900);color:#fff;border-radius:18px;padding:14px;text-align:center}
+.stat-a{background:var(--blue-900);color:#fff;border-radius:18px;padding:14px;text-align:center;transition:.25s}
+.stat-a:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(7,26,47,.18)}
 .stat-a b{font-size:1.45rem;display:block}
 .stat-a span{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:700}
-.blob{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(0,229,255,.18), transparent 65%);filter:blur(10px);right:-140px;top:40px;pointer-events:none}
+.blob{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(0,229,255,.16), transparent 65%);filter:blur(12px);right:-140px;top:40px;pointer-events:none}
 .about-text h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3vw,2.2rem);letter-spacing:-.03em;line-height:1;color:var(--blue-900)}
 .about-text p{color:#334155}
-.quote{background:linear-gradient(135deg,var(--blue-900), var(--blue-700));color:#E0F0FF;border-radius:20px;padding:16px 16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow)}
+.quote{background:linear-gradient(135deg,var(--blue-900), var(--blue-700));color:#E0F0FF;border-radius:20px;padding:16px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
 .quote i{font-size:1.3rem;color:var(--cyan);margin-top:2px}
 .quote b{color:#fff}
 
 /* Reviews */
 .reviews{background:var(--blue-900);color:#E0F0FF;position:relative;overflow:hidden}
 .reviews::before{content:"";position:absolute;inset:0;background:
- radial-gradient(600px 400px at 20% 0%, rgba(0,229,255,.18), transparent 60%),
- radial-gradient(600px 400px at 90% 20%, rgba(255,184,0,.14), transparent 60%);pointer-events:none}
+ radial-gradient(600px 400px at 20% 0%, rgba(0,229,255,.16), transparent 60%),
+ radial-gradient(600px 400px at 90% 20%, rgba(255,184,0,.13), transparent 60%);pointer-events:none}
 .reviews-head{position:relative}
 .reviews-head h2{color:#fff}
 .reviews-head p{color:#BDD7F5}
@@ -235,9 +257,10 @@ section{padding:64px 0}
 .rating-big{font-size:2.2rem;font-weight:900;letter-spacing:-.03em;color:#fff}
 .rating-big small{font-size:1rem;font-weight:700;color:#93C5FD}
 .carousel{position:relative;margin-top:18px}
-.carousel-track{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;transition:.5s}
+.carousel-track{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;transition:transform .55s ease, opacity .35s}
 @media(max-width:900px){.carousel-track{grid-template-columns:1fr;}}
-.review-card{background:#fff;color:#0F172A;border-radius:20px;padding:16px;box-shadow:0 12px 32px rgba(0,0,0,.22);border:1px solid #E2E8F0;display:flex;flex-direction:column;gap:10px;min-height:212px;position:relative;overflow:hidden}
+.review-card{background:#fff;color:#0F172A;border-radius:20px;padding:16px;box-shadow:0 12px 32px rgba(0,0,0,.22);border:1px solid #E2E8F0;display:flex;flex-direction:column;gap:10px;min-height:220px;position:relative;overflow:hidden;transition:.25s}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.24)}
 .review-card::before{content:"“";position:absolute;right:14px;top:-6px;font-size:84px;line-height:1;color:#EFF6FF;font-family:'Space Grotesk',sans-serif;pointer-events:none}
 .r-head{display:flex;align-items:center;gap:10px}
 .r-avatar{width:44px;height:44px;border-radius:999px;object-fit:cover}
@@ -259,7 +282,8 @@ section{padding:64px 0}
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}
 .contact-cards{display:grid;gap:12px}
-.c-card{background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:16px;display:flex;gap:12px;box-shadow:0 6px 18px rgba(15,23,42,.06)}
+.c-card{background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:16px;display:flex;gap:12px;box-shadow:0 6px 18px rgba(15,23,42,.06);transition:.25s}
+.c-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .c-card i{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue-700),var(--blue-400));color:#fff;flex:0 0 42px}
 .c-card h4{font-size:.98rem;color:var(--blue-900)}
 .c-card p, .c-card a{font-size:.9rem;color:#475569;font-weight:500}
@@ -268,7 +292,6 @@ section{padding:64px 0}
 .form h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;color:var(--blue-900)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 @media(max-width:600px){.form-grid{grid-template-columns:1fr}}
-.input{position:relative}
 .input input,.input textarea,.input select{width:100%;height:44px;border:1px solid #E2E8F0;border-radius:14px;padding:0 14px;font-weight:500;outline:0;background:#F8FAFF;transition:.2s}
 .input textarea{height:110px;padding:12px 14px;resize:vertical}
 .input input:focus,.input textarea:focus,.input select:focus{border-color:var(--blue-300);background:#fff;box-shadow:0 0 0 4px rgba(41,182,246,.14)}
@@ -277,9 +300,15 @@ section{padding:64px 0}
 .map-foot{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#fff}
 .map-foot p{font-size:.88rem;color:#475569}
 .hours{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.hours div{background:#F8FAFF;border:1px solid #E2E8F0;border-radius:14px;padding:10px 12px;text-align:center}
-.hours b{display:block;color:var(--blue-900)}
+.hours div{background:#F8FAFF;border:1px solid #E2E8F0;border-radius:16px;padding:12px;text-align:center;transition:.2s}
+.hours div:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(15,23,42,.07)}
+.hours b{display:block;color:var(--blue-900);font-size:.98rem}
 .hours span{font-size:.78rem;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.hours .closed{background:#FFF1F2;border-color:#FECDD3}
+.hours .closed b{color:#BE123C}
+.hours .open-card{background:var(--blue-900);color:#fff;border-color:var(--blue-900);box-shadow:0 8px 18px rgba(7,26,47,.18)}
+.hours .open-card b{color:var(--cyan)}
+.hours .open-card span{color:#BDD7F5}
 
 /* Footer */
 footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid rgba(255,255,255,.06)}
@@ -320,7 +349,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
 .summary b{color:var(--blue-900)}
 
 /* Reveal */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease, transform .65s ease}
 .reveal.in{opacity:1;transform:none}
 .reveal-delay-1{transition-delay:.08s}
 .reveal-delay-2{transition-delay:.16s}
@@ -361,14 +390,15 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
 </style>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 <div class="progress" id="progress"></div>
 
 <div class="topbar">
   <div class="container topbar-inner">
     <div class="topbar-left">
       <span class="pill"><i class="fa-solid fa-truck-fast"></i> Delivery Available Countrywide</span>
-      <span class="pill"><i class="fa-solid fa-location-dot"></i> Opposite Bihi Towers, Moi Avenue — Queen Mall G17</span>
-      <span class="pill accent"><i class="fa-solid fa-bolt"></i> Same-Day in Nairobi</span>
+      <span class="pill"><i class="fa-solid fa-location-dot"></i> Queen Mall G17, Moi Ave — Opp. Bihi Towers</span>
+      <span class="pill" id="topOpenPill"><i class="fa-solid fa-clock"></i> <span id="topOpenText">Open Mon–Sat 09:00–20:00 • Sun Closed</span></span>
     </div>
     <div class="topbar-right">
       <a href="tel:+254714178239"><i class="fa-solid fa-phone"></i> +254 714 178239</a>
@@ -395,7 +425,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
     </nav>
     <div class="nav-actions">
       <button class="cart-btn" id="cartBtn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-badge" id="cartCount">0</span></button>
-      <a href="https://wa.me/254714178239?text=Hello%20StampCos%20Enterprises%2C%20I%20want%20to%20order%20a%20stamp" target="_blank" class="btn btn-whatsapp" style="height:44px;padding:0 16px;display:inline-flex"><i class="fa-brands fa-whatsapp"></i><span class="hide-sm"> Order Now</span></a>
+      <a href="https://wa.me/254714178239?text=Hello%20StampCos%20Enterprises%2C%20I%20want%20to%20order%20a%20stamp" target="_blank" class="btn btn-whatsapp" style="height:44px;padding:0 16px;display:inline-flex"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
       <button class="hamburger" id="hamburger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
@@ -409,6 +439,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       <b style="font-family:'Space Grotesk',sans-serif;color:var(--blue-900)">Menu</b>
       <button id="closeMobile" style="width:38px;height:38px;border-radius:999px;border:1px solid #E2E8F0;background:#fff;display:grid;place-items:center;cursor:pointer"><i class="fa-solid fa-xmark"></i></button>
     </div>
+    <div style="background:var(--blue-50);border:1px solid #DBEAFE;border-radius:14px;padding:10px 12px;display:flex;align-items:center;gap:8px;font-weight:800;color:var(--blue-900);font-size:.84rem"><i class="fa-solid fa-clock" style="color:var(--blue-600)"></i> <span id="mobileOpenText">Open Mon–Sat 09:00–20:00 • Sun Closed</span></div>
     <a href="#home" class="active">Home <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#products">Products <i class="fa-solid fa-arrow-right"></i></a>
     <a href="#about">About <i class="fa-solid fa-arrow-right"></i></a>
@@ -416,13 +447,14 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
     <a href="#contact">Contact <i class="fa-solid fa-arrow-right"></i></a>
     <a href="https://wa.me/254714178239" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
     <a href="tel:+254714178239" class="btn btn-dark"><i class="fa-solid fa-phone"></i> +254 714 178239</a>
-    <p style="font-size:.82rem;color:#64748B;margin-top:auto">Opposite Bihi Towers, Moi Avenue, Queen Mall G17 • Delivery Countrywide</p>
+    <p style="font-size:.82rem;color:#64748B;margin-top:auto">Queen Mall G17, Moi Avenue — Opp. Bihi Towers • Mon–Sat 09:00–20:00 • Sun Closed • Delivery Countrywide</p>
   </div>
 </div>
 
 <main>
 <!-- HERO -->
 <section class="hero" id="home" style="padding-bottom:18px">
+  <div class="mesh" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="reveal">
       <div class="eyebrow"><span class="dot"></span> Nairobi’s Most Trusted Stamp Maker — Est. 2014 <span style="background:var(--blue-900);color:#fff;padding:3px 8px;border-radius:999px;margin-left:4px;font-size:.68rem;letter-spacing:.06em">4.9 ★ Google</span></div>
@@ -430,7 +462,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       <p class="lead">From <b>Heavy-Duty Embossing Seals</b> to <b>Self-Inking Date Stamps</b>, <b>Name Tags & Door Tags</b> — we craft crisp, legal-grade impressions for businesses, schools, hospitals & government across Kenya.</p>
       <div class="hero-ctas">
         <a href="#products" class="btn btn-primary" style="height:52px;padding:0 22px;font-size:1rem"><i class="fa-solid fa-bolt"></i> Shop Best Sellers</a>
-        <a href="https://wa.me/254714178239?text=Jambo%20StampCos!%20Nataka%20kutengeneza%20stamp%20%2F%20seal" target="_blank" class="btn btn-whatsapp" style="height:52px;padding:0 22px;font-size:1rem"><i class="fa-brands fa-whatsapp"></i> WhatsApp Order — 2min Reply</a>
+        <a href="https://wa.me/254714178239?text=Jambo%20StampCos!%20Nataka%20kutengeneza%20stamp%20%2F%20seal" target="_blank" class="btn btn-whatsapp" style="height:52px;padding:0 22px;font-size:1rem"><i class="fa-brands fa-whatsapp"></i> WhatsApp — 2min Reply</a>
       </div>
       <div class="trust">
         <div class="avatars">
@@ -451,22 +483,33 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
         <div class="mini-stat"><b>4.9★</b><span>Google Rating</span></div>
         <div class="mini-stat"><b>2 Hrs</b><span>Avg. Nairobi Make Time</span></div>
       </div>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <span class="open-pill" id="heroOpenPill"><i class="fa-solid fa-circle" style="font-size:.5rem"></i> <span id="heroOpenText">Checking hours…</span></span>
+        <span style="font-size:.8rem;color:#64748B;font-weight:600"><i class="fa-solid fa-location-dot" style="color:var(--blue-500)"></i> Queen Mall G17, Moi Ave — Opp. Bihi Towers • Mon–Sat 09:00–20:00 • Sun Closed</span>
+      </div>
     </div>
 
     <div class="window reveal reveal-delay-1">
+      <!-- floating deco cards -->
+      <div class="float-card c1">
+        <i style="background:linear-gradient(135deg,var(--blue-700),var(--cyan))"><i class="fa-solid fa-bolt" style="width:auto;height:auto;background:none"></i></i>
+        <div><b>2-Hour Make</b><span>Nairobi • Same Day</span></div>
+      </div>
+      <div class="float-card c2">
+        <i style="background:linear-gradient(135deg,#FF8A00,#FFB800)"><i class="fa-solid fa-truck-fast" style="width:auto;height:auto;background:none"></i></i>
+        <div><b>Countrywide</b><span>24–48hrs Delivery</span></div>
+      </div>
       <div class="window-bar">
         <div class="dots"><span></span><span></span><span></span></div>
-        <div class="window-title"><i class="fa-solid fa-play"></i> LIVE SHOWCASE — SLIDESHOW 2S</div>
+        <div class="window-title"><i class="fa-solid fa-play"></i> LIVE SHOWCASE — 2S</div>
         <div class="live"><i class="fa-solid fa-circle"></i> LIVE</div>
       </div>
-      <div class="slides" id="slides">
-        <!-- slides injected -->
-      </div>
+      <div class="slides" id="slides"></div>
       <div class="slide-indicators" id="slideDots"></div>
       <div class="window-foot">
         <div class="window-foot-left">
-          <span><i class="fa-solid fa-location-dot" style="color:var(--cyan)"></i> <b>Queen Mall G17, Moi Avenue</b> — Opposite Bihi Towers</span>
-          <span class="pill" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:#fff"><i class="fa-solid fa-clock" style="color:var(--accent)"></i> Open Mon–Sat 8am–6pm</span>
+          <span><i class="fa-solid fa-location-dot" style="color:var(--cyan)"></i> <b>Queen Mall G17, Moi Avenue</b> — Opp. Bihi Towers</span>
+          <span class="open-pill" id="windowOpenPill" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:#fff"><i class="fa-solid fa-clock" style="color:var(--accent)"></i> <span id="windowOpenText">Mon–Sat 09:00–20:00 • Sun Closed</span></span>
         </div>
         <div class="window-foot-right">
           <a href="#products" class="btn btn-ghost" style="height:36px;padding:0 14px;font-size:.84rem;background:#fff"><i class="fa-solid fa-store"></i> View Catalog</a>
@@ -483,18 +526,19 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
     <span><i class="fa-solid fa-check"></i> Pocket Seal Silver</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Wooden Stamps — Any Shape</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Round Auto Date Stamp</span><span>•</span>
-    <span><i class="fa-solid fa-check"></i> Oval Date Stamp</span><span>•</span>
+    <span><i class="fa-solid fa-check"></i> Oval Data Stamp</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Self-Inking Date Stamp</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Box Auto Stamp</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Garment Ink</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Name Tags</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Door Tags</span><span>•</span>
+    <span><i class="fa-solid fa-clock"></i> Mon–Sat 09:00–20:00 • Sun Closed</span><span>•</span>
     <span><i class="fa-solid fa-truck-fast"></i> Countrywide Delivery</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Heavy Duty Seal</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Pocket Seal Silver</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Wooden Stamps — Any Shape</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Round Auto Date Stamp</span><span>•</span>
-    <span><i class="fa-solid fa-check"></i> Oval Date Stamp</span><span>•</span>
+    <span><i class="fa-solid fa-check"></i> Oval Data Stamp</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Self-Inking Date Stamp</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Box Auto Stamp</span><span>•</span>
     <span><i class="fa-solid fa-check"></i> Garment Ink</span><span>•</span>
@@ -518,7 +562,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       <div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" placeholder="Search stamps — e.g. 'date' , 'seal' , 'wooden'"></div>
       <div class="sort"><select id="sortSelect"><option value="popular">Sort: Most Popular</option><option value="price-low">Price: Low → High</option><option value="price-high">Price: High → Low</option><option value="name">Name A→Z</option></select></div>
       <button class="btn btn-ghost" id="clearFilters" style="height:44px"><i class="fa-solid fa-rotate"></i> Clear</button>
-      <span style="margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--muted);font-size:.86rem"><i class="fa-solid fa-bag-shopping" style="color:var(--blue-600)"></i> <span id="productCount">12 products</span></span>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--muted);font-size:.86rem"><i class="fa-solid fa-bag-shopping" style="color:var(--blue-600)"></i> <span id="productCount">14 products</span></span>
     </div>
 
     <div class="filters reveal reveal-delay-1" id="filters">
@@ -532,9 +576,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       <button class="chip" data-filter="ink"><i class="fa-solid fa-fill-drip"></i> Garment Inks</button>
     </div>
 
-    <div class="grid-products reveal reveal-delay-2" id="productGrid">
-      <!-- products injected -->
-    </div>
+    <div class="grid-products reveal reveal-delay-2" id="productGrid"></div>
 
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;align-items:center;justify-content:center">
       <button class="btn btn-dark" id="viewCartBtn" style="height:48px;padding:0 22px"><i class="fa-solid fa-bag-shopping"></i> View Cart (<span id="cartCount2">0</span>) — Order All via WhatsApp</button>
@@ -551,7 +593,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       <div class="about-text reveal">
         <div class="eyebrow2">About StampCos Enterprises</div>
         <h2>We Help Kenyan Businesses<br><span style="color:var(--blue-600)">Look Official — Instantly.</span></h2>
-        <p>StampCos Enterprises is a Nairobi-based workshop at <b>Queen Mall G17, Moi Avenue — opposite Bihi Towers</b>. We design, engrave and assemble <b>rubber stamps, company seals, date stamps, name tags, door tags and garment marking inks</b> right in town — no brokers, no delays.</p>
+        <p>StampCos Enterprises is a Nairobi workshop at <b>Queen Mall G17, Moi Avenue — opposite Bihi Towers</b>. We design, engrave and assemble <b>rubber stamps, company seals, date stamps, name tags, door tags and garment marking inks</b> right in town — no brokers, no delays.</p>
         <p>We started with one engraving machine and a promise: <b>crisp impressions, honest prices, fast turnaround.</b> Today schools, law firms, clinics, SACCOs, logistics companies and government offices trust us for stamps that are <b>legible, durable, and legally compliant</b>. What you approve on screen is exactly what you receive.</p>
         <div class="quote">
           <i class="fa-solid fa-quote-left"></i>
@@ -562,6 +604,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
           <div class="tick"><i class="fa-solid fa-check"></i> Countrywide delivery via Fargo, Wells & buses — pay on arrival</div>
           <div class="tick"><i class="fa-solid fa-check"></i> Free artwork & proof before production</div>
         </div>
+        <div style="margin-top:12px;display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #DBEAFE;padding:8px 12px;border-radius:999px;font-weight:800;color:var(--blue-900);box-shadow:var(--shadow)"><i class="fa-solid fa-clock" style="color:var(--blue-600)"></i> Open Mon–Sat 09:00–20:00 • Sunday Closed <span class="open-pill" id="aboutOpenPill" style="margin-left:6px">● Checking…</span></div>
         <div class="stats-about">
           <div class="stat-a"><b>10+</b><span>Years Serving</span></div>
           <div class="stat-a"><b>5K+</b><span>Clients</span></div>
@@ -610,9 +653,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
     <div class="divider" style="background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);margin-top:16px"></div>
 
     <div class="carousel">
-      <div class="carousel-track" id="reviewTrack">
-        <!-- reviews injected -->
-      </div>
+      <div class="carousel-track" id="reviewTrack"></div>
       <div class="carousel-controls">
         <div style="display:flex;align-items:center;gap:12px">
           <div class="dots-reviews" id="reviewDots"></div>
@@ -636,7 +677,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
         <div class="eyebrow2">Visit & Contact</div>
         <h2>Find Us Opposite Bihi Towers.<br><span style="color:var(--blue-600)">We’re Ready to Stamp.</span></h2>
       </div>
-      <p><b>Queen Mall, Shop G17, Moi Avenue, Nairobi CBD.</b> Call/WhatsApp <b>+254 714 178239</b> for instant proof & quote. Weekend? We still reply. Countrywide delivery sorted within hours.</p>
+      <p><b>Queen Mall, Shop G17, Moi Avenue, Nairobi CBD.</b> Call/WhatsApp <b>+254 714 178239</b> for instant proof & quote. Visit <b>Mon–Sat 09:00–20:00</b> — <b>Sunday Closed</b>. Countrywide delivery sorted within hours.</p>
     </div>
 
     <div class="contact-grid reveal reveal-delay-1">
@@ -654,7 +695,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
             <div class="c-card" style="flex-direction:column;gap:10px">
               <i class="fa-solid fa-phone"></i>
-              <div><h4>Call / WhatsApp</h4><a href="tel:+254714178239" style="font-weight:800;color:var(--blue-900);font-size:1.05rem">+254 714 178239</a><p>2-min avg. reply • 8am–8pm daily</p><a href="https://wa.me/254714178239?text=Hello%20StampCos!%20I%20want%20a%20quote" target="_blank" class="btn btn-whatsapp" style="margin-top:8px;height:38px;font-size:.84rem">Chat Now</a></div>
+              <div><h4>Call / WhatsApp</h4><a href="tel:+254714178239" style="font-weight:800;color:var(--blue-900);font-size:1.05rem">+254 714 178239</a><p>2-min avg. reply • <b>Mon–Sat 09:00–20:00</b></p><a href="https://wa.me/254714178239?text=Hello%20StampCos!%20I%20want%20a%20quote" target="_blank" class="btn btn-whatsapp" style="margin-top:8px;height:38px;font-size:.84rem">Chat Now</a></div>
             </div>
             <div class="c-card" style="flex-direction:column;gap:10px">
               <i class="fa-solid fa-envelope"></i>
@@ -662,17 +703,33 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
             </div>
           </div>
           <div class="hours">
-            <div><b>Mon – Fri</b><span>8:00 AM – 6:30 PM</span></div>
-            <div><b>Saturday</b><span>8:30 AM – 5:00 PM</span></div>
-            <div><b>Sunday</b><span>Closed • WhatsApp only</span></div>
-            <div style="background:var(--blue-900);color:#fff;border-color:var(--blue-900)"><b style="color:var(--cyan)">Urgent?</b><span style="color:#BDD7F5">WhatsApp 24hrs • Pickup available</span></div>
+            <div class="open-card">
+              <b>Mon – Sat</b>
+              <span>09:00 AM – 08:00 PM</span>
+              <small id="hoursStatus" style="display:block;margin-top:4px;font-weight:800;letter-spacing:.06em;font-size:.72rem;opacity:.95">● Checking…</small>
+            </div>
+            <div class="closed">
+              <b>Sunday</b>
+              <span>Closed</span>
+              <small style="display:block;margin-top:4px;font-weight:700;color:#9F1239;font-size:.72rem">No pickup • WhatsApp auto-reply next day</small>
+            </div>
+            <div>
+              <b>WhatsApp</b>
+              <span>24hrs auto-reply</span>
+              <small style="display:block;margin-top:4px;color:#64748B;font-weight:600;font-size:.7rem">We respond first thing Mon 09:00</small>
+            </div>
+            <div style="background:#EFF6FF;border-color:#BFDBFE">
+              <b style="color:var(--blue-900)">Visit Us</b>
+              <span>Queen Mall G17</span>
+              <small style="display:block;margin-top:4px;color:var(--blue-700);font-weight:700;font-size:.7rem">Opp. Bihi Towers, Moi Ave</small>
+            </div>
           </div>
         </div>
 
         <div class="map">
           <iframe src="https://www.google.com/maps?q=Opposite%20Bihi%20towers,%20Moi%20Avenue,%20Queen%20Mall%20G17&z=17&hl=en&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="StampCos location"></iframe>
           <div class="map-foot">
-            <p><b>StampCos Enterprises</b> — Opposite Bihi Towers, Moi Avenue, Queen Mall G17, Nairobi</p>
+            <p><b>StampCos Enterprises</b> — Moi Ave, Queen Mall G17 • <b>Mon–Sat 09:00–20:00 • Sun Closed</b></p>
             <a href="https://www.google.com/maps/search/Opposite%20Bihi%20towers%2C%20Moi%20Avenue%2C%20Queen%20Mall%20G17/@-1.3177,36.7831,17z?hl=en" target="_blank" class="btn btn-primary" style="height:38px;padding:0 14px;font-size:.84rem"><i class="fa-solid fa-location-arrow"></i> Get Directions</a>
           </div>
         </div>
@@ -681,18 +738,18 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       <form class="form" id="contactForm" novalidate>
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="pill" style="background:var(--blue-900);color:#fff"><i class="fa-solid fa-bolt" style="color:var(--accent)"></i> Quick Quote — 5 min</span><span style="color:var(--muted);font-weight:600;font-size:.84rem">We’ll proof your stamp free before you pay</span></div>
         <h3 style="margin-top:10px;font-size:1.35rem">Get Your Stamp Quote Now</h3>
-        <p style="color:#64748B;font-size:.9rem">Tell us what you need — we reply on WhatsApp with price, proof & delivery time.</p>
+        <p style="color:#64748B;font-size:.9rem">Tell us what you need — we reply on WhatsApp with price, proof & delivery time. <b>Shop hours: Mon–Sat 09:00–20:00, Sun Closed.</b></p>
         <div class="form-grid">
           <div class="input"><input required name="name" placeholder="Your Name *"></div>
           <div class="input"><input required name="phone" placeholder="Phone / WhatsApp *"></div>
-          <div class="input"><select name="product"><option value="">What do you need?</option><option>Company Seal — Heavy Duty</option><option>Pocket Seal Silver</option><option>Wooden Stamp — Any Shape</option><option>Round Auto Date Stamp</option><option>Oval Date Stamp</option><option>Self-Inking Date Stamp</option><option>Box Auto Stamp</option><option>Garment Ink</option><option>Name Tags</option><option>Door Tags</option><option>Other</option></select></div>
+          <div class="input"><select name="product"><option value="">What do you need?</option><option>Company Seal — Heavy Duty</option><option>Pocket Seal Silver</option><option>Wooden Stamp — Any Shape</option><option>Round Auto Date Stamp</option><option>Oval Data Stamp</option><option>Self-Inking Date Stamp</option><option>Box Auto Stamp</option><option>Garment Ink</option><option>Name Tags</option><option>Door Tags</option><option>Other</option></select></div>
           <div class="input"><input name="company" placeholder="Company / Institution Name"></div>
         </div>
         <div class="input" style="margin-top:12px"><textarea name="message" placeholder="Details — e.g. 'Round 42mm, text: JAMII SACCO LTD, PO BOX... Date included, deliver to Kisumu'"></textarea></div>
         <label style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:.86rem;color:#475569;font-weight:600"><input type="checkbox" required style="accent-color:var(--blue-600)"> I agree to be contacted via WhatsApp / Phone *</label>
         <button type="submit" class="btn btn-whatsapp" style="width:100%;height:50px;margin-top:12px;font-size:1rem"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
         <button type="button" class="btn btn-ghost" style="width:100%;height:44px;margin-top:8px" onclick="document.getElementById('productGrid').scrollIntoView({behavior:'smooth'})"><i class="fa-solid fa-store"></i> Or Browse Catalog First</button>
-        <p style="text-align:center;font-size:.78rem;color:#94A3B8;margin-top:8px"><i class="fa-solid fa-lock"></i> Your details are safe — we only use them to make your stamp.</p>
+        <p style="text-align:center;font-size:.76rem;color:#94A3B8;margin-top:8px"><i class="fa-solid fa-lock"></i> Your details are safe — Mon–Sat 09:00–20:00 we reply in ~2 min, Sun next-day.</p>
       </form>
     </div>
   </div>
@@ -707,10 +764,11 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
           <div class="logo" style="width:40px;height:40px;font-size:1rem">SC</div>
           <b style="font-family:'Space Grotesk',sans-serif;color:#fff;letter-spacing:-.02em">StampCos Enterprises</b>
         </div>
-        <p style="color:#8FB6E0;font-size:.92rem;line-height:1.5">Nairobi’s workshop for crisp, durable stamps & seals. Opposite Bihi Towers, Queen Mall G17. Delivery countrywide. M-Pesa, Pay on Delivery & warranty on every stamp.</p>
+        <p style="color:#8FB6E0;font-size:.92rem;line-height:1.5">Nairobi’s workshop for crisp, durable stamps & seals. Queen Mall G17, Moi Ave — Opp. Bihi Towers. <b style="color:#fff">Mon–Sat 09:00–20:00 • Sun Closed.</b> Delivery countrywide. M-Pesa, Pay on Delivery & warranty.</p>
         <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
           <span style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:6px 10px;border-radius:999px;font-weight:700;font-size:.78rem;display:inline-flex;align-items:center;gap:6px"><i class="fa-solid fa-phone" style="color:var(--cyan)"></i> +254 714 178239</span>
           <span style="background:#25D366;color:#fff;padding:6px 10px;border-radius:999px;font-weight:800;font-size:.78rem;display:inline-flex;align-items:center;gap:6px"><i class="fa-brands fa-whatsapp"></i> WhatsApp 24/7</span>
+          <span id="footerOpenPill" class="open-pill" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#fff">● Checking…</span>
         </div>
       </div>
       <div>
@@ -732,11 +790,11 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       </div>
       <div>
         <h4>Visit Us</h4>
-        <p style="color:#8FB6E0;font-size:.92rem">Queen Mall G17, Moi Avenue<br>Opposite Bihi Towers, Nairobi CBD<br><br><b style="color:#fff">Hours:</b> Mon–Sat 8am–6pm<br>Sun: WhatsApp only<br><br><a href="https://www.google.com/maps/search/Opposite%20Bihi%20towers%2C%20Moi%20Avenue%2C%20Queen%20Mall%20G17/@-1.3177,36.7831,17z?hl=en" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--blue-900);padding:8px 12px;border-radius:999px;font-weight:800;margin-top:6px">Open Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+        <p style="color:#8FB6E0;font-size:.92rem">Queen Mall G17, Moi Avenue<br>Opposite Bihi Towers, Nairobi CBD<br><br><b style="color:#fff">Hours:</b> Mon–Sat 09:00–20:00<br>Sunday: Closed<br><br><a href="https://www.google.com/maps/search/Opposite%20Bihi%20towers%2C%20Moi%20Avenue%2C%20Queen%20Mall%20G17/@-1.3177,36.7831,17z?hl=en" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--blue-900);padding:8px 12px;border-radius:999px;font-weight:800;margin-top:6px">Open Maps <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> StampCos Enterprises. All rights reserved. • Crafted in Nairobi with <i class="fa-solid fa-heart" style="color:#FF6B6B"></i></span>
+      <span>© <span id="year"></span> StampCos Enterprises. All rights reserved. • Crafted in Nairobi with <i class="fa-solid fa-heart" style="color:#FF6B6B"></i> • <b>Mon–Sat 09:00–20:00 • Sun Closed</b></span>
       <span style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span style="background:rgba(255,255,255,.08);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1)"><i class="fa-solid fa-shield-halved" style="color:var(--cyan)"></i> Pay on Delivery</span><span style="background:rgba(255,255,255,.08);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1)"><i class="fa-solid fa-truck-fast" style="color:var(--accent)"></i> Countrywide</span><span style="background:rgba(255,255,255,.08);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1)"><i class="fa-solid fa-credit-card" style="color:#93C5FD"></i> M-Pesa • Bank</span></span>
     </div>
   </div>
@@ -744,7 +802,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
 
 <!-- Floating WhatsApp -->
 <div class="float-wa">
-  <div class="tip">Chat with us — 2min reply ⚡</div>
+  <div class="tip" id="floatTip">Chat with us — 2min reply ⚡ • Mon–Sat 09:00–20:00</div>
   <a class="wa-btn" href="https://wa.me/254714178239?text=Hello%20StampCos%20Enterprises!%20I%20found%20you%20on%20your%20website%20and%20want%20to%20order." target="_blank" aria-label="WhatsApp" style="position:relative">
     <span class="wa-pulse"></span>
     <i class="fa-brands fa-whatsapp" style="position:relative;z-index:1"></i>
@@ -758,7 +816,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
     <div class="drawer-head">
       <div>
         <h3><i class="fa-solid fa-bag-shopping" style="color:var(--blue-600)"></i> Your Cart</h3>
-        <p style="font-size:.84rem;color:#64748B;font-weight:600"><span id="cartItemsCount">0</span> items • Delivery countrywide</p>
+        <p style="font-size:.84rem;color:#64748B;font-weight:600"><span id="cartItemsCount">0</span> items • Delivery countrywide • <b>Mon–Sat 09:00–20:00</b></p>
       </div>
       <button id="closeDrawer" style="width:38px;height:38px;border-radius:999px;border:1px solid #E2E8F0;background:#fff;display:grid;place-items:center;cursor:pointer"><i class="fa-solid fa-xmark"></i></button>
     </div>
@@ -771,7 +829,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       </div>
       <button class="btn btn-whatsapp" id="checkoutWA" style="width:100%;height:50px;margin-top:12px;font-size:1rem"><i class="fa-brands fa-whatsapp"></i> Order All via WhatsApp</button>
       <button class="btn btn-ghost" id="keepShopping" style="width:100%;height:44px;margin-top:8px"><i class="fa-solid fa-store"></i> Keep Shopping</button>
-      <p style="text-align:center;font-size:.76rem;color:#94A3B8;margin-top:8px">You’ll confirm artwork & delivery on WhatsApp before payment.</p>
+      <p style="text-align:center;font-size:.76rem;color:#94A3B8;margin-top:8px">We’ll confirm artwork & delivery on WhatsApp. <b>Shop open Mon–Sat 09:00–20:00, Sun Closed.</b></p>
     </div>
   </div>
 </div>
@@ -780,6 +838,48 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
 
 <script>
 const WA_NUMBER = "254714178239";
+
+// ===== LIVE OPEN/CLOSED (Africa/Nairobi) — Mon-Sat 09:00-20:00, Sun Closed =====
+function getNairobiTime(){
+  const now = new Date();
+  // Use Intl to get Nairobi wall time
+  const str = now.toLocaleString('en-GB', {timeZone:'Africa/Nairobi', hour12:false});
+  // str format "12/10/2026, 14:05:30"
+  const parts = str.split(', ');
+  const time = parts[1].split(':');
+  const datePart = parts[0].split('/');
+  // derive day of week via Date in Nairobi tz
+  const nairobiDate = new Date(now.toLocaleString('en-US',{timeZone:'Africa/Nairobi'}));
+  return {day: nairobiDate.getDay(), hour: parseInt(time[0],10), minute: parseInt(time[1],10), nairobiDate};
+}
+function updateOpenStatus(){
+  const {day,hour,minute} = getNairobiTime();
+  const mins = hour*60+minute;
+  const isSun = day===0;
+  const isOpen = !isSun && mins>=540 && mins<1200; // 09:00=540, 20:00=1200
+  const text = isOpen ? '● Open Now — Closes 20:00' : (isSun ? '● Closed — Opens Mon 09:00' : (mins<540 ? '● Closed — Opens 09:00' : '● Closed — Opens tomorrow 09:00'));
+  const cls = isOpen ? 'open' : 'closed';
+  // hero pill
+  const heroPill=document.getElementById('heroOpenPill');
+  const heroText=document.getElementById('heroOpenText');
+  if(heroPill && heroText){ heroPill.className='open-pill '+cls; heroText.textContent=text; }
+  // hours status
+  const hStatus=document.getElementById('hoursStatus');
+  if(hStatus){ hStatus.textContent=text; hStatus.style.color= isOpen ? '#065F46' : '#BE123C'; }
+  // about
+  const aPill=document.getElementById('aboutOpenPill');
+  if(aPill){ aPill.textContent=text; aPill.className='open-pill '+cls; aPill.style.marginLeft='6px'; }
+  // footer
+  const fPill=document.getElementById('footerOpenPill');
+  if(fPill){ fPill.textContent=text; fPill.className='open-pill '+cls; fPill.style.background= isOpen ? 'rgba(37,211,102,.14)' : 'rgba(239,68,68,.14)'; fPill.style.borderColor= isOpen ? 'rgba(37,211,102,.28)' : 'rgba(239,68,68,.28)'; fPill.style.color= isOpen ? '#86EFAC' : '#FECACA'; }
+  // top bar subtle
+  const topText=document.getElementById('topOpenText');
+  if(topText) topText.textContent = isOpen ? 'Open Now — Mon–Sat 09:00–20:00' : 'Closed — Mon–Sat 09:00–20:00 • Sun Closed';
+  // float tip
+  const floatTip=document.getElementById('floatTip');
+  if(floatTip) floatTip.textContent = isOpen ? 'Chat with us — 2min reply ⚡ • Open till 20:00' : 'Shop closed (09:00–20:00 Mon–Sat) — WhatsApp auto-replies next open';
+}
+updateOpenStatus(); setInterval(updateOpenStatus, 60000);
 
 // Slideshow - 2s refresh
 const slidesData = [
@@ -883,7 +983,6 @@ function renderProducts(){
   `).join('') || `<div style="grid-column:1/-1;text-align:center;padding:30px;background:#fff;border:1px dashed #CBD5E1;border-radius:16px;color:#64748B"><i class="fa-solid fa-magnifying-glass" style="font-size:1.4rem"></i><p style="margin-top:8px;font-weight:700">No products found for "${searchQ}" in "${activeFilter}"</p><button class="btn btn-ghost" style="margin-top:10px" onclick="clearFilters()">Clear filters</button></div>`;
 }
 
-// Filters
 document.querySelectorAll('.chip').forEach(ch=>{
   ch.addEventListener('click',()=>{
     document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
@@ -926,7 +1025,7 @@ function addToCart(id){
 }
 function orderSingle(id){
   const prod=products.find(p=>p.id===id);
-  const msg=`Hello StampCos Enterprises! 👋%0A%0AI want to order:%0A• ${encodeURIComponent(prod.name)} — ${formatKES(prod.price)}%0A%0APlease share proof & delivery time. I am at: [your location]. My name: [your name].`;
+  const msg=`Hello StampCos Enterprises! 👋%0A%0AI want to order:%0A• ${encodeURIComponent(prod.name)} — ${formatKES(prod.price)}%0A%0APlease share proof & delivery time. I am at: [your location]. My name: [your name]. Shop hours Mon–Sat 09:00–20:00 noted.`;
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`,'_blank');
 }
 function updateCartUI(){
@@ -939,7 +1038,7 @@ function updateCartUI(){
   document.getElementById('cartTotal').textContent=formatKES(subtotal);
   const body=document.getElementById('cartBody');
   if(cart.length===0){
-    body.innerHTML=`<div class="empty"><i class="fa-solid fa-bag-shopping" style="font-size:1.6rem;color:#94A3B8"></i><p style="margin-top:8px;font-weight:700;color:#334155">Your cart is empty</p><p style="font-size:.86rem">Add stamps — we’ll checkout all at once via WhatsApp</p><a href="#products" onclick="closeDrawer()" class="btn btn-primary" style="margin-top:12px;height:42px">Browse Products</a></div>`;
+    body.innerHTML=`<div class="empty"><i class="fa-solid fa-bag-shopping" style="font-size:1.6rem;color:#94A3B8"></i><p style="margin-top:8px;font-weight:700;color:#334155">Your cart is empty</p><p style="font-size:.86rem">Add stamps — we’ll checkout all at once via WhatsApp • Mon–Sat 09:00–20:00</p><a href="#products" onclick="closeDrawer()" class="btn btn-primary" style="margin-top:12px;height:42px">Browse Products</a></div>`;
   } else {
     body.innerHTML=cart.map(c=>`
       <div class="cart-item">
@@ -980,11 +1079,10 @@ document.getElementById('checkoutWA').addEventListener('click',()=>{
   let msg=`Hello StampCos Enterprises! 👋%0A%0AI want to order ${cart.length} item(s):%0A`;
   cart.forEach(c=>{ msg+=`• ${encodeURIComponent(c.name)} x${c.qty} — ${formatKES(c.price*c.qty)}%0A`; });
   const total=cart.reduce((s,c)=>s+c.price*c.qty,0);
-  msg+=`%0A*Total: ${formatKES(total)}* (delivery not included)%0A%0AMy name: [your name]%0ADelivery to: [town / estate]%0APhone: [your number]%0A%0APlease send proof & M-Pesa details.`;
+  msg+=`%0A*Total: ${formatKES(total)}* (delivery not included)%0A%0AMy name: [your name]%0ADelivery to: [town / estate]%0APhone: [your number]%0AShop hours Mon–Sat 09:00–20:00 noted%0A%0APlease send proof & M-Pesa details.`;
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`,'_blank');
 });
 
-// Toast
 function toast(msg){
   const t=document.getElementById('toast');
   document.getElementById('toastMsg').textContent=msg;
@@ -1025,7 +1123,6 @@ const reviews = [
   {name:"Hassan Abdalla", role:"Shop Owner, Garissa", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80&auto=format&fit=crop", text:"Delivered to Garissa in 48hrs. Self-inking stamp works flawlessly in dusty environment.", stars:5, date:"1 month ago"},
   {name:"Joyce Mwikali", role:"Secretary, Mwikali Law", avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80&auto=format&fit=crop", text:"Pocket seal silver is stunning. Clients think it’s imported. Made in Nairobi — proud!", stars:5, date:"1 month ago"},
 ];
-// expand to 50 by cloning with variations
 while(reviews.length<50){
   const base=reviews[reviews.length%30];
   reviews.push({...base, name: base.name+" ", text: base.text});
@@ -1037,7 +1134,6 @@ function renderReviews(){
   const track=document.getElementById('reviewTrack');
   const start=reviewPage*perPage;
   const slice=reviews.slice(start, start+perPage);
-  // on desktop show 3, on mobile CSS will stack but we still show 3
   track.innerHTML=slice.map(r=>`
     <div class="review-card">
       <div class="r-head">
@@ -1073,9 +1169,9 @@ document.getElementById('contactForm').addEventListener('submit',e=>{
   const product=fd.get('product')||'Stamp';
   const company=fd.get('company')||'';
   const message=fd.get('message')||'';
-  const text=`Hello StampCos Enterprises! 👋%0A%0A*New Quote Request*%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ACompany: ${encodeURIComponent(company)}%0ANeed: ${encodeURIComponent(product)}%0ADetails: ${encodeURIComponent(message)}%0A%0APlease send proof, price & delivery time.`;
+  const text=`Hello StampCos Enterprises! 👋%0A%0A*New Quote Request*%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ACompany: ${encodeURIComponent(company)}%0ANeed: ${encodeURIComponent(product)}%0ADetails: ${encodeURIComponent(message)}%0A%0AShop hours Mon–Sat 09:00–20:00 noted. Please send proof, price & delivery time.`;
   window.open(`https://wa.me/${WA_NUMBER}?text=${text}`,'_blank');
-  toast('Opening WhatsApp — we reply in ~2 min ⚡');
+  toast('Opening WhatsApp — we reply in ~2 min ⚡ (Mon–Sat 09:00–20:00)');
 });
 
 // Mobile menu
@@ -1097,7 +1193,6 @@ const observer=new IntersectionObserver((entries)=>{
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// active nav on scroll
 const sections=['home','products','about','reviews','contact'];
 const navLinks=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{
@@ -1108,6 +1203,19 @@ window.addEventListener('scroll',()=>{
   }
   navLinks.forEach(a=>{ a.classList.toggle('active', a.getAttribute('href')==='#'+cur); });
 });
+
+// parallax for window
+const win=document.querySelector('.window');
+if(win){
+  window.addEventListener('mousemove',e=>{
+    if(window.innerWidth<980) return;
+    const rect=win.getBoundingClientRect();
+    const x=(e.clientX - rect.left - rect.width/2)/ rect.width;
+    const y=(e.clientY - rect.top - rect.height/2)/ rect.height;
+    win.style.transform=`perspective(900px) rotateY(${x*3}deg) rotateX(${-y*3}deg)`;
+  });
+  window.addEventListener('mouseleave',()=>{ win.style.transform='perspective(900px) rotateY(0) rotateX(0)';});
+}
 
 renderProducts();
 updateCartUI();

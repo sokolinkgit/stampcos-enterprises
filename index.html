@@ -110,8 +110,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdro
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 16px}
 .trust{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
 .trust .avatars{display:flex}
-.trust .avatars img{width:34px;height:34px;border-radius:999px;border:3px solid #fff;margin-left:-8px;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.12)}
-.trust .avatars img:first-child{margin-left:0}
+.trust-avatar{width:34px;height:34px;border-radius:999px;border:3px solid #fff;margin-left:-8px;display:grid;place-items:center;flex:0 0 34px;background:linear-gradient(135deg,var(--avatar-from,#0E4A86),var(--avatar-to,#00B4D8));color:#fff;font-size:.67rem;font-weight:900;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.trust-avatar:first-child{margin-left:0}
 .stars{color:#FFB800}
 .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
 .mini-stat{background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:12px 14px;box-shadow:0 6px 18px rgba(15,23,42,.06);transition:.25s}
@@ -263,7 +263,7 @@ section{padding:64px 0;position:relative}
 .review-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.24)}
 .review-card::before{content:"“";position:absolute;right:14px;top:-6px;font-size:84px;line-height:1;color:#EFF6FF;font-family:'Space Grotesk',sans-serif;pointer-events:none}
 .r-head{display:flex;align-items:center;gap:10px}
-.r-avatar{width:44px;height:44px;border-radius:999px;object-fit:cover}
+.r-avatar{width:44px;height:44px;border-radius:999px;flex:0 0 44px;display:grid;place-items:center;background:var(--avatar-bg,linear-gradient(135deg,#0E4A86,#00B4D8));color:#fff;font-size:.82rem;font-weight:900;letter-spacing:.02em;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 3px 9px rgba(7,26,47,.16)}
 .r-name{font-weight:800;color:var(--blue-900);line-height:1.1}
 .r-meta{font-size:.78rem;color:var(--muted);font-weight:600}
 .r-stars{color:#FFB800;font-size:.82rem}
@@ -465,12 +465,12 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
         <a href="https://wa.me/254714178239?text=Jambo%20StampCos!%20Nataka%20kutengeneza%20stamp%20%2F%20seal" target="_blank" class="btn btn-whatsapp" style="height:52px;padding:0 22px;font-size:1rem"><i class="fa-brands fa-whatsapp"></i> WhatsApp — 2min Reply</a>
       </div>
       <div class="trust">
-        <div class="avatars">
-          <img src="https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?w=100&q=80&auto=format&fit=crop" alt="Kenyan client">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&auto=format&fit=crop" alt="Kenyan client">
-          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80&auto=format&fit=crop" alt="Kenyan client">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop" alt="Kenyan client">
-          <img src="https://images.unsplash.com/photo-1488426862026-3ee34e13d8bc?w=100&q=80&auto=format&fit=crop" alt="Kenyan client">
+        <div class="avatars" aria-label="Customers across Kenya">
+          <span class="trust-avatar" style="--avatar-from:#0E4A86;--avatar-to:#00B4D8" aria-label="James Mwangi">JM</span>
+          <span class="trust-avatar" style="--avatar-from:#7C2D12;--avatar-to:#F97316" aria-label="Aisha Mohammed">AM</span>
+          <span class="trust-avatar" style="--avatar-from:#14532D;--avatar-to:#22C55E" aria-label="Peter Otieno">PO</span>
+          <span class="trust-avatar" style="--avatar-from:#581C87;--avatar-to:#A855F7" aria-label="Grace Wanjiku">GW</span>
+          <span class="trust-avatar" style="--avatar-from:#9F1239;--avatar-to:#F43F5E" aria-label="Brian Kimani">BK</span>
         </div>
         <div>
           <div style="display:flex;align-items:center;gap:6px;font-weight:800;color:var(--blue-900)"><span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span> 4.9/5 (2,847 reviews)</div>
@@ -612,7 +612,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
         </div>
       </div>
       <div class="about-card reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c86c6438?w=700&q=80&auto=format&fit=crop" alt="Kenyan team working">
+        <img src="assets/rubber-stamps.png" alt="Custom wooden rubber stamps made by StampCos">
         <div class="about-card-content">
           <div style="display:inline-flex;gap:8px;align-items:center;background:var(--blue-50);border:1px solid #DBEAFE;padding:6px 10px;border-radius:999px;font-weight:800;color:var(--blue-800);font-size:.76rem;letter-spacing:.06em"><i class="fa-solid fa-award" style="color:var(--accent)"></i> TRUSTED BY 5,000+ BUSINESSES</div>
           <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--blue-900);line-height:1.1">What We Do — Simply</h3>
@@ -883,16 +883,10 @@ updateOpenStatus(); setInterval(updateOpenStatus, 60000);
 
 // Slideshow - 2s refresh
 const slidesData = [
-  {img:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&auto=format&fit=crop", title:"Heavy-Duty Company Seal", sub:"Embossed crisp • KRA compliant", tag:"🔥 Best Seller"},
-  {img:"https://images.unsplash.com/photo-1521791136064-7986c86c6438?w=900&q=80&auto=format&fit=crop", title:"Happy Client — Nairobi Law Firm", sub:"'Seal delivered in 3 hours, perfect emboss!' — Wafula & Co.", tag:"⭐ 5.0 Verified"},
-  {img:"https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?w=900&q=80&auto=format&fit=crop", title:"Pocket Seal — Silver Chrome", sub:"Elegant, legal-grade pocket seal", tag:"New • Silver"},
-  {img:"https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=900&q=80&auto=format&fit=crop", title:"Self-Inking Date Stamp", sub:"Auto-ink • 10K impressions", tag:"Office Favourite"},
-  {img:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=900&q=80&auto=format&fit=crop", title:"Wooden Stamps — Any Shape", sub:"Custom logo stamps, any art", tag:"Custom Shape"},
-  {img:"https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=900&q=80&auto=format&fit=crop", title:"School — Garment Marking", sub:"Garment ink that survives wash after wash", tag:"For Schools"},
-  {img:"https://images.unsplash.com/photo-1580489944761-15a19d654956?w=900&q=80&auto=format&fit=crop", title:"Name & Door Tags", sub:"Acrylic, crystal-clear, mounted in 1hr", tag:"Name Tags"},
-  {img:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=900&q=80&auto=format&fit=crop", title:"Happy Client — Mombasa", sub:"Oval date stamp delivered next day", tag:"Countrywide ✓"},
-  {img:"https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=900&q=80&auto=format&fit=crop", title:"Round Auto Date Stamp", sub:"Heavy metal frame • Date + text", tag:"Dater"},
-  {img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&auto=format&fit=crop", title:"Box Auto Stamp — Large", sub:"Big imprint for cartons & invoices", tag:"Large Format"},
+  {img:"assets/company-seals.png", title:"Heavy-Duty Company Seals", sub:"Embossed, crisp impressions for official documents", tag:"Best Seller"},
+  {img:"assets/rubber-stamps.png", title:"Custom Wooden Rubber Stamps", sub:"Round, oval or rectangular — made to your artwork", tag:"Custom Shapes"},
+  {img:"assets/date-stamps.png", title:"Date, Self-Inking & Box Stamps", sub:"Reliable office marking for 10,000+ impressions", tag:"Office Favourite"},
+  {img:"assets/custom-tags.png", title:"Name Tags, Door Tags & Garment Ink", sub:"Professional marking solutions for every team", tag:"Ready for Kenya"},
 ];
 let slideIdx=0;
 const slidesEl=document.getElementById('slides');
@@ -914,20 +908,20 @@ setInterval(()=>{ slideIdx=(slideIdx+1)%slidesData.length; renderSlides(); },200
 
 // Products
 const products = [
-  {id:1, cat:"seal", catLabel:"Company Seal", name:"Heavy Duty Seal — Embossing", desc:"Solid steel embossing seal. Crisp raised seal for companies, law firms, SACCOS. KRA compliant.", price:3500, old:4200, img:"https://images.unsplash.com/photo-1626785774625-dd9b82ff516a?w=600&q=80&auto=format&fit=crop", badge:"pop", stock:87, rating:4.9, reviews:312},
-  {id:2, cat:"seal", catLabel:"Company Seal", name:"Pocket Seal — Silver Chrome", desc:"Elegant silver pocket seal. Compact, executive finish. Comes with leather pouch.", price:4500, old:5200, img:"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80&auto=format&fit=crop", badge:"new", stock:54, rating:5.0, reviews:189},
-  {id:3, cat:"wooden", catLabel:"Wooden Stamp", name:"Wooden Stamp — Any Shape", desc:"Hand-finished wooden handle. Any shape/logo — rectangular, oval, circular. Red/blue ink.", price:800, old:1000, img:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80&auto=format&fit=crop", badge:"pop", stock:92, rating:4.8, reviews:421},
-  {id:4, cat:"date", catLabel:"Date Stamp", name:"Round Auto Date Stamp — Dater", desc:"Heavy metal round dater. Date + custom text (Company, Received, Paid). Auto-ink.", price:1800, old:2200, img:"https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&q=80&auto=format&fit=crop", badge:"new", stock:63, rating:4.9, reviews:256},
-  {id:5, cat:"date", catLabel:"Date Stamp", name:"Oval Data Stamp", desc:"Classic oval shape for official documents. Smooth twist date mechanism.", price:1700, old:2000, img:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80&auto=format&fit=crop", badge:"", stock:71, rating:4.7, reviews:198},
-  {id:6, cat:"date", catLabel:"Date Stamp", name:"Oval Data Stamp — Large 60x40mm", desc:"Larger oval for certificates & letterheads. Extra-bold date wheels.", price:2100, old:2500, img:"https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&q=80&auto=format&fit=crop", badge:"pop", stock:48, rating:4.8, reviews:167},
-  {id:7, cat:"self-inking", catLabel:"Self-Inking", name:"Self-Inking Date Stamp", desc:"One-press date + text. Built-in ink pad — 10,000+ impressions before refill.", price:2500, old:3000, img:"https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80&auto=format&fit=crop", badge:"pop", stock:77, rating:4.9, reviews:332},
-  {id:8, cat:"office", catLabel:"Office & Box", name:"Box Auto Stamp — Large Format", desc:"Giant auto stamp for cartons, invoices, export boxes. 70x45mm & 80x55mm.", price:3200, old:3800, img:"https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600&q=80&auto=format&fit=crop", badge:"new", stock:34, rating:4.8, reviews:142},
-  {id:9, cat:"ink", catLabel:"Garment Ink", name:"Garment Ink — School & Hospital", desc:"Permanent fabric ink. For uniforms, linen, lab coats. Wash-proof, non-fade. 30ml & 50ml.", price:650, old:800, img:"https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=600&q=80&auto=format&fit=crop", badge:"", stock:95, rating:4.9, reviews:278},
-  {id:10, cat:"tags", catLabel:"Name Tags", name:"Name Tags — Acrylic Crystal", desc:"Crystal-clear acrylic name tags. UV printed, pins/magnets. For staff, shop, desk.", price:350, old:450, img:"https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80&auto=format&fit=crop", badge:"pop", stock:88, rating:4.9, reviews:364},
-  {id:11, cat:"tags", catLabel:"Door Tags", name:"Door Tags — Brushed Gold/Silver", desc:"Premium brushed metal door tags. Office, Toilet, Manager — any text. 3M mounted.", price:850, old:1050, img:"https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop", badge:"new", stock:66, rating:4.8, reviews:201},
-  {id:12, cat:"self-inking", catLabel:"Self-Inking", name:"Trodat Self-Inking Stamp 4913", desc:"Trodat-style self-inking rectangular. Up to 6 lines. Smooth, quiet, refillable.", price:1500, old:1800, img:"https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=600&q=80&auto=format&fit=crop", badge:"", stock:73, rating:4.7, reviews:189},
-  {id:13, cat:"wooden", catLabel:"Wooden Stamp", name:"Wooden Handle Stamp — Round 38mm", desc:"Classic round wooden stamp for received/paid/approved. Fast 1hr make.", price:700, old:900, img:"https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&q=80&auto=format&fit=crop", badge:"", stock:81, rating:4.8, reviews:223},
-  {id:14, cat:"office", catLabel:"Office & Box", name:"Common Seal — Company Stamp Set", desc:"Complete set: Rubber stamp + Seal + Ink pad. For new company registration.", price:5800, old:6800, img:"https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=600&q=80&auto=format&fit=crop", badge:"pop", stock:41, rating:5.0, reviews:267},
+  {id:1, cat:"seal", catLabel:"Company Seal", name:"Heavy Duty Seal — Embossing", desc:"Solid steel embossing seal. Crisp raised seal for companies, law firms, SACCOS. KRA compliant.", price:3500, old:4200, img:"assets/company-seals.png", badge:"pop", stock:87, rating:4.9, reviews:312},
+  {id:2, cat:"seal", catLabel:"Company Seal", name:"Pocket Seal — Silver Chrome", desc:"Elegant silver pocket seal. Compact, executive finish. Comes with leather pouch.", price:4500, old:5200, img:"assets/company-seals.png", badge:"new", stock:54, rating:5.0, reviews:189},
+  {id:3, cat:"wooden", catLabel:"Wooden Stamp", name:"Wooden Stamp — Any Shape", desc:"Hand-finished wooden handle. Any shape/logo — rectangular, oval, circular. Red/blue ink.", price:800, old:1000, img:"assets/rubber-stamps.png", badge:"pop", stock:92, rating:4.8, reviews:421},
+  {id:4, cat:"date", catLabel:"Date Stamp", name:"Round Auto Date Stamp — Dater", desc:"Heavy metal round dater. Date + custom text (Company, Received, Paid). Auto-ink.", price:1800, old:2200, img:"assets/date-stamps.png", badge:"new", stock:63, rating:4.9, reviews:256},
+  {id:5, cat:"date", catLabel:"Date Stamp", name:"Oval Data Stamp", desc:"Classic oval shape for official documents. Smooth twist date mechanism.", price:1700, old:2000, img:"assets/date-stamps.png", badge:"", stock:71, rating:4.7, reviews:198},
+  {id:6, cat:"date", catLabel:"Date Stamp", name:"Oval Data Stamp — Large 60x40mm", desc:"Larger oval for certificates & letterheads. Extra-bold date wheels.", price:2100, old:2500, img:"assets/date-stamps.png", badge:"pop", stock:48, rating:4.8, reviews:167},
+  {id:7, cat:"self-inking", catLabel:"Self-Inking", name:"Self-Inking Date Stamp", desc:"One-press date + text. Built-in ink pad — 10,000+ impressions before refill.", price:2500, old:3000, img:"assets/date-stamps.png", badge:"pop", stock:77, rating:4.9, reviews:332},
+  {id:8, cat:"office", catLabel:"Office & Box", name:"Box Auto Stamp — Large Format", desc:"Giant auto stamp for cartons, invoices, export boxes. 70x45mm & 80x55mm.", price:3200, old:3800, img:"assets/date-stamps.png", badge:"new", stock:34, rating:4.8, reviews:142},
+  {id:9, cat:"ink", catLabel:"Garment Ink", name:"Garment Ink — School & Hospital", desc:"Permanent fabric ink. For uniforms, linen, lab coats. Wash-proof, non-fade. 30ml & 50ml.", price:650, old:800, img:"assets/custom-tags.png", badge:"", stock:95, rating:4.9, reviews:278},
+  {id:10, cat:"tags", catLabel:"Name Tags", name:"Name Tags — Acrylic Crystal", desc:"Crystal-clear acrylic name tags. UV printed, pins/magnets. For staff, shop, desk.", price:350, old:450, img:"assets/custom-tags.png", badge:"pop", stock:88, rating:4.9, reviews:364},
+  {id:11, cat:"tags", catLabel:"Door Tags", name:"Door Tags — Brushed Gold/Silver", desc:"Premium brushed metal door tags. Office, Toilet, Manager — any text. 3M mounted.", price:850, old:1050, img:"assets/custom-tags.png", badge:"new", stock:66, rating:4.8, reviews:201},
+  {id:12, cat:"self-inking", catLabel:"Self-Inking", name:"Trodat Self-Inking Stamp 4913", desc:"Trodat-style self-inking rectangular. Up to 6 lines. Smooth, quiet, refillable.", price:1500, old:1800, img:"assets/date-stamps.png", badge:"", stock:73, rating:4.7, reviews:189},
+  {id:13, cat:"wooden", catLabel:"Wooden Stamp", name:"Wooden Handle Stamp — Round 38mm", desc:"Classic round wooden stamp for received/paid/approved. Fast 1hr make.", price:700, old:900, img:"assets/rubber-stamps.png", badge:"", stock:81, rating:4.8, reviews:223},
+  {id:14, cat:"office", catLabel:"Office & Box", name:"Common Seal — Company Stamp Set", desc:"Complete set: Rubber stamp + Seal + Ink pad. For new company registration.", price:5800, old:6800, img:"assets/company-seals.png", badge:"pop", stock:41, rating:5.0, reviews:267},
 ];
 
 let activeFilter="all";
@@ -1092,41 +1086,57 @@ function toast(msg){
 
 // Reviews - 50 reviews, 3 at a go, refresh 5s
 const reviews = [
-  {name:"James Mwangi", role:"Director, Mwangi & Associates Advocates", avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop", text:"Heavy-duty seal is superb. Deep, clean emboss. Picked it same day at Queen Mall G17. Very professional.", stars:5, date:"2 days ago"},
-  {name:"Aisha Mohammed", role:"Head Teacher, Light Academy", avatar:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80&auto=format&fit=crop", text:"Garment ink for 300 uniforms — hasn’t faded after many washes. The team even helped design our school stamp.", stars:5, date:"1 week ago"},
-  {name:"Peter Otieno", role:"Owner, Lakeview Hardware Kisumu", avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&auto=format&fit=crop", text:"Ordered oval date stamp from Kisumu, arrived next morning via bus. Crisp impression, honest price. Asante StampCos!", stars:5, date:"3 days ago"},
-  {name:"Grace Wanjiku", role:"Pharmacist, Afya Bora Chemist", avatar:"https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&auto=format&fit=crop", text:"Name tags are premium — crystal clear and the magnet is strong. Clients compliment them daily.", stars:5, date:"5 days ago"},
-  {name:"Brian Kimani", role:"Founder, Safi Logistics", avatar:"https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?w=100&q=80&auto=format&fit=crop", text:"Box auto stamp saved us hours. Stamps cartons perfectly, ink lasts. WhatsApp response in 2 minutes!", stars:5, date:"1 day ago"},
-  {name:"Fatma Hassan", role:"Admin, Coastal Clinic Mombasa", avatar:"https://images.unsplash.com/photo-1488426862026-3ee34e13d8bc?w=100&q=80&auto=format&fit=crop", text:"Self-inking date stamp is a workhorse — 10k impressions and still sharp. Delivered to Mombasa quickly.", stars:5, date:"4 days ago"},
-  {name:"David Njoroge", role:"Chairman, Umoja SACCO", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80&auto=format&fit=crop", text:"Company seal + rubber stamp set for our SACCO registration. Both accepted by registrar first time. Highly recommend.", stars:5, date:"6 days ago"},
-  {name:"Mercy Chebet", role:"Principal, Eldoret Girls", avatar:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80&auto=format&fit=crop", text:"Wooden stamp any shape — they made our circular school logo perfectly. Kids love stamping!", stars:5, date:"1 week ago"},
-  {name:"Kevin Ochieng", role:"Manager, Ochieng Enterprises", avatar:"https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=100&q=80&auto=format&fit=crop", text:"Pocket seal silver looks executive. Fits in my suit pocket, seals nicely even on thick paper.", stars:5, date:"2 weeks ago"},
-  {name:"Lilian Atieno", role:"NGO Coordinator, Turkana Aid", avatar:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&auto=format&fit=crop", text:"Round auto date stamp for field office. Sturdy metal frame, date wheels are smooth. Sent to Lodwar without issues.", stars:5, date:"3 weeks ago"},
-  {name:"Samuel Maina", role:"Daktari, Maina Dental", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80&auto=format&fit=crop", text:"Door tags in brushed gold elevated our clinic. 3M mounting is solid, text is laser-sharp.", stars:5, date:"5 days ago"},
-  {name:"Naomi Kerubo", role:"Boutique Owner, Kisii", avatar:"https://images.unsplash.com/photo-1485875437342-9b39470b3d95?w=100&q=80&auto=format&fit=crop", text:"Ordered name tags via WhatsApp, got proof in 10 mins, delivered in 2 days to Kisii. Love it!", stars:5, date:"8 days ago"},
-  {name:"Joseph Kiptoo", role:"Farmer, Kaptagat Dairy", avatar:"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80&auto=format&fit=crop", text:"Garment ink marked 200 dairy overalls — permanent after wash. Great value for 650.", stars:5, date:"9 days ago"},
-  {name:"Winnie Muthoni", role:"Lawyer, W & Partners", avatar:"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80&auto=format&fit=crop", text:"Our heavy-duty seal is now our official mark on all affidavits. Clean, deep, durable.", stars:5, date:"10 days ago"},
-  {name:"Erick Barasa", role:"Director, Barasa Schools", avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop", text:"From enquiry to delivery — 4 hours in Nairobi. That’s efficiency. Wooden stamps are perfect.", stars:5, date:"11 days ago"},
-  {name:"Caroline Njeri", role:"HR, Nairobi Hospital Wing", avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80&auto=format&fit=crop", text:"Bulk name tags for 60 staff — consistent quality, fast turnaround. Will reorder.", stars:5, date:"12 days ago"},
-  {name:"Moses Kipchumba", role:"Pastor, Eldoret Chapel", avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&auto=format&fit=crop", text:"Oval data stamp for church certificates. Elegant and official. Delivery to Eldoret was seamless.", stars:5, date:"13 days ago"},
-  {name:"Sharon Akinyi", role:"CEO, Akinyi Beauty", avatar:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80&auto=format&fit=crop", text:"Self-inking stamp with my logo — so cute and professional for receipts. Customers notice!", stars:5, date:"14 days ago"},
-  {name:"George Kariuki", role:"Contractor, Kariuki Builders", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80&auto=format&fit=crop", text:"Box stamp for delivery notes — large, clear, saves time. Ink refill is easy.", stars:5, date:"2 weeks ago"},
-  {name:"Esther Wafula", role:"Teacher, Bungoma Primary", avatar:"https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&auto=format&fit=crop", text:"Wooden stamp any shape — star shape for pupils. They love it, and it was only 800!", stars:5, date:"2 weeks ago"},
-  {name:"Victor Mutiso", role:"Agent, Mutiso Properties", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80&auto=format&fit=crop", text:"Company seals done in 2 hours. Even proofed my logo for free. True professionals at Queen Mall.", stars:5, date:"2 weeks ago"},
-  {name:"Ann Waithera", role:"Nurse, Kenyatta Annex", avatar:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80&auto=format&fit=crop", text:"Name tags with magnet — no pin holes on uniform. Gentle and strong.", stars:5, date:"3 weeks ago"},
-  {name:"Felix Odhiambo", role:"Student Leader, UoN", avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80&auto=format&fit=crop", text:"Affordable wooden stamp for our student club. Quality beyond price. Picked at G17.", stars:5, date:"3 weeks ago"},
-  {name:"Patricia Milugo", role:"Director, Milugo Fashions", avatar:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&q=80&auto=format&fit=crop", text:"Garment ink + name tags combo delivered to Nakuru. Both excellent. Will refer friends.", stars:5, date:"3 weeks ago"},
-  {name:"John Kamau", role:"Chemist, Kamau Agrovet", avatar:"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80&auto=format&fit=crop", text:"Round date stamp for expiry marking — accurate, ink doesn’t smudge. Very happy.", stars:5, date:"4 weeks ago"},
-  {name:"Diana Chepkemoi", role:"Librarian, Moi University", avatar:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&auto=format&fit=crop", text:"Door tags for library — silver brushed finish is classy. Mounted in minutes.", stars:5, date:"4 weeks ago"},
-  {name:"Collins Kibet", role:"Driver SACCO Chair", avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format&fit=crop", text:"Heavy duty seal for our SACCO — emboss is deep and respected by banks.", stars:5, date:"4 weeks ago"},
-  {name:"Beatrice Nyambura", role:"Caterer, Nyambura Events", avatar:"https://images.unsplash.com/photo-1485875437342-9b39470b3d95?w=100&q=80&auto=format&fit=crop", text:"Custom wooden stamp for packaging — any shape, they did my chef logo perfectly!", stars:5, date:"1 month ago"},
-  {name:"Hassan Abdalla", role:"Shop Owner, Garissa", avatar:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80&auto=format&fit=crop", text:"Delivered to Garissa in 48hrs. Self-inking stamp works flawlessly in dusty environment.", stars:5, date:"1 month ago"},
-  {name:"Joyce Mwikali", role:"Secretary, Mwikali Law", avatar:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80&auto=format&fit=crop", text:"Pocket seal silver is stunning. Clients think it’s imported. Made in Nairobi — proud!", stars:5, date:"1 month ago"},
+  {name:"James Mwangi", role:"Director, Mwangi & Associates Advocates", text:"Heavy-duty seal is superb. Deep, clean emboss. Picked it same day at Queen Mall G17. Very professional.", stars:5, date:"2 days ago"},
+  {name:"Aisha Mohammed", role:"Head Teacher, Light Academy", text:"Garment ink for 300 uniforms — hasn’t faded after many washes. The team even helped design our school stamp.", stars:5, date:"1 week ago"},
+  {name:"Peter Otieno", role:"Owner, Lakeview Hardware Kisumu", text:"Ordered oval date stamp from Kisumu, arrived next morning via bus. Crisp impression, honest price. Asante StampCos!", stars:5, date:"3 days ago"},
+  {name:"Grace Wanjiku", role:"Pharmacist, Afya Bora Chemist", text:"Name tags are premium — crystal clear and the magnet is strong. Clients compliment them daily.", stars:5, date:"5 days ago"},
+  {name:"Brian Kimani", role:"Founder, Safi Logistics", text:"Box auto stamp saved us hours. Stamps cartons perfectly, ink lasts. WhatsApp response in 2 minutes!", stars:5, date:"1 day ago"},
+  {name:"Fatma Hassan", role:"Admin, Coastal Clinic Mombasa", text:"Self-inking date stamp is a workhorse — 10k impressions and still sharp. Delivered to Mombasa quickly.", stars:5, date:"4 days ago"},
+  {name:"David Njoroge", role:"Chairman, Umoja SACCO", text:"Company seal + rubber stamp set for our SACCO registration. Both accepted by registrar first time. Highly recommend.", stars:5, date:"6 days ago"},
+  {name:"Mercy Chebet", role:"Principal, Eldoret Girls", text:"Wooden stamp any shape — they made our circular school logo perfectly. Kids love stamping!", stars:5, date:"1 week ago"},
+  {name:"Kevin Ochieng", role:"Manager, Ochieng Enterprises", text:"Pocket seal silver looks executive. Fits in my suit pocket, seals nicely even on thick paper.", stars:5, date:"2 weeks ago"},
+  {name:"Lilian Atieno", role:"NGO Coordinator, Turkana Aid", text:"Round auto date stamp for field office. Sturdy metal frame, date wheels are smooth. Sent to Lodwar without issues.", stars:5, date:"3 weeks ago"},
+  {name:"Samuel Maina", role:"Daktari, Maina Dental", text:"Door tags in brushed gold elevated our clinic. 3M mounting is solid, text is laser-sharp.", stars:5, date:"5 days ago"},
+  {name:"Naomi Kerubo", role:"Boutique Owner, Kisii", text:"Ordered name tags via WhatsApp, got proof in 10 mins, delivered in 2 days to Kisii. Love it!", stars:5, date:"8 days ago"},
+  {name:"Joseph Kiptoo", role:"Farmer, Kaptagat Dairy", text:"Garment ink marked 200 dairy overalls — permanent after wash. Great value for 650.", stars:5, date:"9 days ago"},
+  {name:"Winnie Muthoni", role:"Lawyer, W & Partners", text:"Our heavy-duty seal is now our official mark on all affidavits. Clean, deep, durable.", stars:5, date:"10 days ago"},
+  {name:"Erick Barasa", role:"Director, Barasa Schools", text:"From enquiry to delivery — 4 hours in Nairobi. That’s efficiency. Wooden stamps are perfect.", stars:5, date:"11 days ago"},
+  {name:"Caroline Njeri", role:"HR, Nairobi Hospital Wing", text:"Bulk name tags for 60 staff — consistent quality, fast turnaround. Will reorder.", stars:5, date:"12 days ago"},
+  {name:"Moses Kipchumba", role:"Pastor, Eldoret Chapel", text:"Oval data stamp for church certificates. Elegant and official. Delivery to Eldoret was seamless.", stars:5, date:"13 days ago"},
+  {name:"Sharon Akinyi", role:"CEO, Akinyi Beauty", text:"Self-inking stamp with my logo — so cute and professional for receipts. Customers notice!", stars:5, date:"14 days ago"},
+  {name:"George Kariuki", role:"Contractor, Kariuki Builders", text:"Box stamp for delivery notes — large, clear, saves time. Ink refill is easy.", stars:5, date:"2 weeks ago"},
+  {name:"Esther Wafula", role:"Teacher, Bungoma Primary", text:"Wooden stamp any shape — star shape for pupils. They love it, and it was only 800!", stars:5, date:"2 weeks ago"},
+  {name:"Victor Mutiso", role:"Agent, Mutiso Properties", text:"Company seals done in 2 hours. Even proofed my logo for free. True professionals at Queen Mall.", stars:5, date:"2 weeks ago"},
+  {name:"Ann Waithera", role:"Nurse, Kenyatta Annex", text:"Name tags with magnet — no pin holes on uniform. Gentle and strong.", stars:5, date:"3 weeks ago"},
+  {name:"Felix Odhiambo", role:"Student Leader, UoN", text:"Affordable wooden stamp for our student club. Quality beyond price. Picked at G17.", stars:5, date:"3 weeks ago"},
+  {name:"Patricia Milugo", role:"Director, Milugo Fashions", text:"Garment ink + name tags combo delivered to Nakuru. Both excellent. Will refer friends.", stars:5, date:"3 weeks ago"},
+  {name:"John Kamau", role:"Chemist, Kamau Agrovet", text:"Round date stamp for expiry marking — accurate, ink doesn’t smudge. Very happy.", stars:5, date:"4 weeks ago"},
+  {name:"Diana Chepkemoi", role:"Librarian, Moi University", text:"Door tags for library — silver brushed finish is classy. Mounted in minutes.", stars:5, date:"4 weeks ago"},
+  {name:"Collins Kibet", role:"Driver SACCO Chair", text:"Heavy duty seal for our SACCO — emboss is deep and respected by banks.", stars:5, date:"4 weeks ago"},
+  {name:"Beatrice Nyambura", role:"Caterer, Nyambura Events", text:"Custom wooden stamp for packaging — any shape, they did my chef logo perfectly!", stars:5, date:"1 month ago"},
+  {name:"Hassan Abdalla", role:"Shop Owner, Garissa", text:"Delivered to Garissa in 48hrs. Self-inking stamp works flawlessly in dusty environment.", stars:5, date:"1 month ago"},
+  {name:"Joyce Mwikali", role:"Secretary, Mwikali Law", text:"Pocket seal silver is stunning. Clients think it’s imported. Made in Nairobi — proud!", stars:5, date:"1 month ago"},
 ];
 while(reviews.length<50){
   const base=reviews[reviews.length%30];
   reviews.push({...base, name: base.name+" ", text: base.text});
 }
+const reviewAvatarColors = [
+  'linear-gradient(135deg,#0E4A86,#00B4D8)',
+  'linear-gradient(135deg,#7C2D12,#F97316)',
+  'linear-gradient(135deg,#14532D,#22C55E)',
+  'linear-gradient(135deg,#581C87,#A855F7)',
+  'linear-gradient(135deg,#9F1239,#F43F5E)',
+  'linear-gradient(135deg,#0F766E,#14B8A6)'
+];
+function reviewInitials(name){
+  return name.trim().split(/\s+/).slice(0,2).map(part=>part[0]).join('').toUpperCase();
+}
+function reviewAvatarColor(name){
+  const total=[...name].reduce((sum,char)=>sum+char.charCodeAt(0),0);
+  return reviewAvatarColors[total%reviewAvatarColors.length];
+}
+
 let reviewPage=0;
 const perPage=3;
 const totalPages=Math.ceil(reviews.length/perPage);
@@ -1137,7 +1147,7 @@ function renderReviews(){
   track.innerHTML=slice.map(r=>`
     <div class="review-card">
       <div class="r-head">
-        <img class="r-avatar" src="${r.avatar}" alt="${r.name}" loading="lazy">
+        <div class="r-avatar" style="--avatar-bg:${reviewAvatarColor(r.name)}" role="img" aria-label="${r.name} initials">${reviewInitials(r.name)}</div>
         <div>
           <div class="r-name">${r.name}</div>
           <div class="r-meta">${r.role} • ${r.date}</div>

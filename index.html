@@ -562,7 +562,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
       <div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" placeholder="Search stamps — e.g. 'date' , 'seal' , 'wooden'"></div>
       <div class="sort"><select id="sortSelect"><option value="popular">Sort: Most Popular</option><option value="price-low">Price: Low → High</option><option value="price-high">Price: High → Low</option><option value="name">Name A→Z</option></select></div>
       <button class="btn btn-ghost" id="clearFilters" style="height:44px"><i class="fa-solid fa-rotate"></i> Clear</button>
-      <span style="margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--muted);font-size:.86rem"><i class="fa-solid fa-bag-shopping" style="color:var(--blue-600)"></i> <span id="productCount">26 products</span></span>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--muted);font-size:.86rem"><i class="fa-solid fa-bag-shopping" style="color:var(--blue-600)"></i> <span id="productCount">38 products</span></span>
     </div>
 
     <div class="filters reveal reveal-delay-1" id="filters">
@@ -742,7 +742,7 @@ footer{background:#06101F;color:#BDD7F5;padding:30px 0 18px;border-top:1px solid
         <div class="form-grid">
           <div class="input"><input required name="name" placeholder="Your Name *"></div>
           <div class="input"><input required name="phone" placeholder="Phone / WhatsApp *"></div>
-          <div class="input"><select name="product"><option value="">What do you need?</option><option>Company Seal — Heavy Duty</option><option>Pocket Seal Silver</option><option>Wooden Stamp — Any Shape</option><option>Round Auto Date Stamp</option><option>Oval Data Stamp</option><option>Self-Inking Date Stamp</option><option>Box Auto Stamp</option><option>Pre-Inked Signature Stamp</option><option>Received / Paid / Copy Office Stamp</option><option>Numbering Stamp — 6 Digit</option><option>Inspection Date Stamp</option><option>Alphabet & Number Stamp Set</option><option>Stamp Ink / Replacement Pad</option><option>Garment Ink</option><option>Name Tags</option><option>Door Tags / Desk Name Plate</option><option>Other</option></select></div>
+          <div class="input"><select name="product"><option value="">What do you need?</option><option>Company Seal — Heavy Duty</option><option>Pocket Seal Silver</option><option>Wooden Stamp — Any Shape</option><option>Round Auto Date Stamp</option><option>Oval Data Stamp</option><option>Self-Inking Date Stamp</option><option>Box Auto Stamp</option><option>Pre-Inked Signature Stamp</option><option>Received / Paid / Copy Office Stamp</option><option>Numbering Stamp — 6 Digit</option><option>Inspection Date Stamp</option><option>Alphabet & Number Stamp Set</option><option>Executive Pocket Seal</option><option>Custom Address / Logo Stamp</option><option>Wedding / Event Monogram Stamp</option><option>Round Logo Self-Inking Stamp</option><option>Professional / Rotating Office Stamp</option><option>Stamp Ink / Replacement Pad</option><option>Garment Ink</option><option>Name Tags / Staff ID Cards</option><option>Door Tags / Desk Name Plate</option><option>Acrylic Office Signage</option><option>Other</option></select></div>
           <div class="input"><input name="company" placeholder="Company / Institution Name"></div>
         </div>
         <div class="input" style="margin-top:12px"><textarea name="message" placeholder="Details — e.g. 'Round 42mm, text: JAMII SACCO LTD, PO BOX... Date included, deliver to Kisumu'"></textarea></div>
@@ -889,6 +889,10 @@ const slidesData = [
   {img:"assets/office-stamps.png", title:"Received, Paid & Signature Stamps", sub:"Ready-made office stamps for fast document flow", tag:"Office Essentials"},
   {img:"assets/numbering-stamps.png", title:"Numbering, Inspection & Alphabet Sets", sub:"Practical tools for records, stock and quality checks", tag:"New Range"},
   {img:"assets/ink-accessories.png", title:"Ink Pads & Refill Supplies", sub:"Keep every stamp sharp, colourful and ready to work", tag:"Supplies"},
+  {img:"assets/portable-seals.png", title:"Executive Pocket & Hand Seals", sub:"Portable, polished embossing for documents on the move", tag:"Executive Range"},
+  {img:"assets/custom-logo-stamps.png", title:"Address, Logo & Event Stamps", sub:"Beautiful custom wooden stamps for brands and occasions", tag:"Made to Order"},
+  {img:"assets/specialty-stamps.png", title:"Professional & Rotating Stamps", sub:"Heavy-duty marking tools for busy office workflows", tag:"Professional"},
+  {img:"assets/signage-badges.png", title:"Office Signs & Staff Badges", sub:"Clear, polished identifiers for every workplace", tag:"Custom Signs"},
   {img:"assets/custom-tags.png", title:"Name Tags, Door Tags & Garment Ink", sub:"Professional marking solutions for every team", tag:"Ready for Kenya"},
 ];
 let slideIdx=0;
@@ -937,6 +941,18 @@ const products = [
   {id:24, cat:"tags", catLabel:"Name Tags", name:"Magnetic Name Tags — Premium", desc:"Scratch-resistant staff name badges with strong magnetic backs. Custom names, roles and colours.", price:500, old:650, img:"assets/custom-tags.png", badge:"pop", stock:84, rating:4.9, reviews:238},
   {id:25, cat:"tags", catLabel:"Door Tags", name:"Desk Name Plate — Brushed Acrylic", desc:"Elegant desk or reception name plate in gold, silver or clear acrylic with engraved text.", price:1200, old:1450, img:"assets/custom-tags.png", badge:"", stock:47, rating:4.8, reviews:112},
   {id:26, cat:"seal", catLabel:"Company Seal", name:"Company Seal Replacement Die", desc:"Replacement engraved die for existing seal presses. Send your approved artwork for an exact fit.", price:1800, old:2200, img:"assets/company-seals.png", badge:"", stock:35, rating:4.7, reviews:76},
+  {id:27, cat:"seal", catLabel:"Company Seal", name:"Executive Pocket Seal — Black Chrome", desc:"Portable black chrome embossing seal for directors, advocates and professionals on the move.", price:5200, old:6000, img:"assets/portable-seals.png", badge:"new", stock:32, rating:4.9, reviews:128},
+  {id:28, cat:"seal", catLabel:"Company Seal", name:"Embossing Seal Gift Set", desc:"Premium hand seal, polished die and presentation case — a refined corporate gift or executive set.", price:6500, old:7500, img:"assets/portable-seals.png", badge:"", stock:18, rating:5.0, reviews:82},
+  {id:29, cat:"wooden", catLabel:"Wooden Stamp", name:"Custom Address Stamp — Wooden", desc:"A crisp custom return-address stamp for envelopes, parcels, invoices and business stationery.", price:950, old:1200, img:"assets/custom-logo-stamps.png", badge:"pop", stock:73, rating:4.9, reviews:214},
+  {id:30, cat:"wooden", catLabel:"Wooden Stamp", name:"Wedding & Event Monogram Stamp", desc:"Personalised monogram stamp for invitations, gift tags, packaging and event stationery.", price:1100, old:1400, img:"assets/custom-logo-stamps.png", badge:"new", stock:58, rating:4.9, reviews:161},
+  {id:31, cat:"self-inking", catLabel:"Self-Inking", name:"Round Logo Self-Inking Stamp", desc:"One-press round logo stamp for receipts, loyalty cards, packaging and branded paperwork.", price:2200, old:2600, img:"assets/specialty-stamps.png", badge:"pop", stock:64, rating:4.9, reviews:193},
+  {id:32, cat:"self-inking", catLabel:"Self-Inking", name:"Professional Large Format Stamp", desc:"Large self-inking stamp with clear custom text for certificates, forms and bulk office work.", price:3600, old:4300, img:"assets/specialty-stamps.png", badge:"new", stock:31, rating:4.8, reviews:105},
+  {id:33, cat:"office", catLabel:"Office & Box", name:"Rotating Phrase Stamp", desc:"Adjustable phrase stamp with essential office markings including Received, Paid, Original and Copy.", price:1900, old:2300, img:"assets/specialty-stamps.png", badge:"", stock:46, rating:4.8, reviews:126},
+  {id:34, cat:"office", catLabel:"Office & Box", name:"Voucher & Finance Office Stamp", desc:"Clean, dependable stamp for payment vouchers, approvals, deposits and accounting workflows.", price:1600, old:1950, img:"assets/office-stamps.png", badge:"", stock:57, rating:4.8, reviews:144},
+  {id:35, cat:"tags", catLabel:"Name Tags", name:"Staff ID Card + Lanyard", desc:"Custom printed staff cards with durable clear holder and premium navy lanyard for your team.", price:650, old:800, img:"assets/signage-badges.png", badge:"new", stock:90, rating:4.9, reviews:187},
+  {id:36, cat:"tags", catLabel:"Name Tags", name:"Visitor Badge Holder + Lanyard", desc:"Reusable visitor badge holder and lanyard set for reception desks, events and office security.", price:400, old:500, img:"assets/signage-badges.png", badge:"", stock:110, rating:4.7, reviews:98},
+  {id:37, cat:"tags", catLabel:"Door Tags", name:"Acrylic Office Door Sign", desc:"Crystal-clear acrylic office sign with custom text, mounting hardware and a polished finish.", price:1600, old:1900, img:"assets/signage-badges.png", badge:"pop", stock:44, rating:4.9, reviews:174},
+  {id:38, cat:"tags", catLabel:"Door Tags", name:"Engraved Reception Desk Sign", desc:"Custom engraved desktop name plate for reception, managers, consultants and front offices.", price:1500, old:1800, img:"assets/signage-badges.png", badge:"", stock:49, rating:4.8, reviews:119},
 ];
 
 let activeFilter="all";
